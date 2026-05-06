@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pokémon Unbound – Übersetzungseditor</title>
+<style>
+  :root {
+    --bg: #1a1a2e;
+    --panel: #16213e;
+    --card: #0f3460;
+    --accent: #e94560;
+    --accent2: #00b4d8;
+    --text: #eaeaea;
+    --muted: #888;
+    --done: #2d6a4f;
+    --done-border: #52b788;
+    --gap: 12px;
+    --radius: 8px;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', system-ui, sans-serif; font-size: 14px; }
+
+  /* ── Header ── */
+  header {
+    background: var(--panel);
+    border-bottom: 2px solid var(--accent);
+    padding: 14px 20px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+  header h1 { font-size: 18px; color: var(--accent2); flex: 1; }
+  .stats { display: flex; gap: 12px; flex-wrap: wrap; }
+  .stat { background: var(--card); border-radius: var(--radius); padding: 6px 12px; font-size: 12px; }
+  .stat span { font-weight: bold; color: var(--accent2); }
+  .progress-bar {
+    width: 100%;
+    height: 4px;
+    background: var(--card);
+    border-radius: 2px;
+    margin-top: 8px;
+  }
+  .progress-fill { height: 100%; background: var(--done-border); border-radius: 2px; transition: width .3s; }
+
+  /* ── Toolbar ── */
+  .toolbar {
+    background: var(--panel);
+    padding: 10px 20px;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    align-items: center;
+    border-bottom: 1px solid #333;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+  }
+  .toolbar input[type=text] {
+    background: var(--bg);
+    border: 1px solid #444;
+    color: var(--text);
+    border-radius: var(--radius);
+    padding: 6px 10px;
+    width: 260px;
+  }
+  .toolbar select {
+    background: var(--bg);
+    border: 1px solid #444;
+    color: var(--text);
+    border-radius: var(--radius);
+    padding: 6px 10px;
+  }
+  .btn {
+    padding: 6px 14px;
+    border-radius: var(--radius);
+    border: none;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: 600;
+    transition: opacity .15s;
+  }
+  .btn:hover { opacity: .85; }
+  .btn-accent  { background: var(--accent);  color: #fff; }
+  .btn-blue    { background: var(--accent2); color: #000; }
+  .btn-neutral { background: #333;           color: var(--text); }
+  .file-label {
+    background: #333;
+    color: var(--text);
+    padding: 6px 14px;
+    border-radius: var(--radius);
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: 600;
+  }
+  .file-label:hover { opacity: .85; }
+  #file-input { display: none; }
+
+  /* ── Main list ── */
+  main { padding: 16px 20px; }
+  #string-list { display: flex; flex-direction: column; gap: var(--gap); }
+
+  .entry {
+    background: var(--panel);
+    border-radius: var(--radius);
+    border: 1px solid #333;
+    overflow: hidden;
+    transition: border-color .15s;
+  }
+  .entry.done { border-color: var(--done-border); background: var(--done); }
+  .entry.done .en-text { opacity: .7; }
+
+  .entry-header {
+    padding: 8px 12px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: rgba(0,0,0,.2);
+    font-size: 12px;
+    color: var(--muted);
+  }
+  .offset-badge {
+    background: var(--card);
+    border-radius: 4px;
+    padding: 2px 8px;
+    font-family: monospace;
+    color: var(--accent2);
+  }
+  .done-badge {
+    margin-left: auto;
+    background: var(--done-border);
+    color: #000;
+    border-radius: 4px;
+    padding: 2px 8px;
+    font-size: 11px;
+    font-weight: bold;
+    display: none;
+  }
+  .entry.done .done-badge { display: inline; }
+
+  .entry-body {
+    padding: 10px 12px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+  @media (max-width: 700px) { .entry-body { grid-template-columns: 1fr; } }
+
+  .field label {
+    display: block;
+    font-size: 11px;
+    color: var(--muted);
+    margin-bottom: 4px;
+    text-transform: uppercase;
+    letter-spacing: .05em;
+  }
+  .en-text {
+    background: var(--bg);
+    border: 1px solid #333;
+    border-radius: var(--radius);
+    padding: 8px;
+    font-family: monospace;
+    font-size: 13px;
+    white-space: pre-wrap;
+    min-height: 60px;
+    color: #bbb;
+    user-select: text;
+  }
+  .trans-input {
+    width: 100%;
+    background: var(--bg);
+    border: 1px solid #555;
+    border-radius: var(--radius);
+    padding: 8px;
+    font-family: monospace;
+    font-size: 13px;
+    color: var(--text);
+    resize: vertical;
+    min-height: 60px;
+    transition: border-color .15s;
+  }
+  .trans-input:focus { outline: none; border-color: var(--accent2); }
+  .entry.done .trans-input { border-color: var(--done-border); }
+
+  .byte-counter {
+    font-size: 11px;
+    font-family: monospace;
+    padding: 2px 7px;
+    border-radius: 4px;
+    background: var(--card);
+    color: var(--muted);
+    white-space: nowrap;
+    transition: background .15s, color .15s;
+  }
+  .byte-counter.ok     { background: #1b4332; color: #52b788; }
+  .byte-counter.warn   { background: #4a3000; color: #fca311; }
+  .byte-counter.over   { background: #4a0000; color: #ff6b6b; font-weight: bold; }
+  .trans-input.over    { border-color: #ff6b6b !important; }
+
+  .entry-footer {
+    padding: 6px 12px;
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    background: rgba(0,0,0,.1);
+  }
+  .comment-input {
+    flex: 1;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid #444;
+    color: var(--muted);
+    font-size: 12px;
+    padding: 2px 4px;
+  }
+  .comment-input:focus { outline: none; border-color: var(--accent2); color: var(--text); }
+  .mark-done-btn {
+    padding: 4px 10px;
+    border-radius: 4px;
+    border: 1px solid var(--done-border);
+    background: transparent;
+    color: var(--done-border);
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: 600;
+  }
+  .entry.done .mark-done-btn { background: var(--done-border); color: #000; }
+
+  /* ── Empty state ── */
+  #empty-state {
+    text-align: center;
+    padding: 60px;
+    color: var(--muted);
+    display: none;
+  }
+  #empty-state h2 { font-size: 20px; margin-bottom: 10px; color: var(--text); }
+
+  /* ── Toast ── */
+  #toast {
+    position: fixed; bottom: 24px; right: 24px;
+    background: var(--done-border); color: #000;
+    padding: 10px 18px; border-radius: var(--radius);
+    font-weight: 600; font-size: 13px;
+    opacity: 0; pointer-events: none;
+    transition: opacity .3s;
+    z-index: 999;
+  }
+  #toast.show { opacity: 1; }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>🎮 Pokémon Unbound – Übersetzungseditor</h1>
+  <div class="stats">
+    <div class="stat">Gesamt: <span id="stat-total">0</span></div>
+    <div class="stat">Fertig: <span id="stat-done">0</span></div>
+    <div class="stat">Offen: <span id="stat-open">0</span></div>
+    <div class="stat"><span id="stat-pct">0</span>%</div>
+  </div>
+  <div class="progress-bar"><div class="progress-fill" id="progress-fill" style="width:0%"></div></div>
+</header>
+
+<div class="toolbar">
+  <label class="file-label" for="file-input">📂 JSON laden</label>
+  <input type="file" id="file-input" accept=".json">
+
+  <input type="text" id="search-input" placeholder="Suche (EN oder Übersetzung)…">
+
+  <select id="filter-select">
+    <option value="all">Alle anzeigen</option>
+    <option value="open">Nur offen</option>
+    <option value="done">Nur fertig</option>
+    <option value="toolong">Zu lang ⚠</option>
+  </select>
+
+  <button class="btn btn-blue" onclick="saveJSON()">💾 JSON speichern</button>
+  <button class="btn btn-neutral" onclick="copyStats()">📊 Stats kopieren</button>
+</div>
+
+<main>
+  <div id="empty-state">
+    <h2>Keine Datei geladen</h2>
+    <p>Klicke auf „JSON laden" und wähle deine <code>de.json</code> Datei.</p>
+    <p style="margin-top:8px;color:#666">Erstelle sie zuerst mit:<br><code>python tools/create_language.py translations/en_source.json translations/de/de.json</code></p>
+  </div>
+  <div id="string-list"></div>
+</main>
+
+<div id="toast"></div>
+
+<script>
+let allData = {};       // { offset: entry }
+let currentFile = null;
+
+// ── Load JSON ──────────────────────────────────────────────────────────────
+document.getElementById('file-input').addEventListener('change', e => {
+  const file = e.target.files[0];
+  if (!file) return;
+  currentFile = file.name;
+  const reader = new FileReader();
+  reader.onload = ev => {
+    try {
+      allData = JSON.parse(ev.target.result);
+      renderAll();
+      toast(`✅ ${Object.keys(allData).length.toLocaleString()} Einträge geladen`);
+    } catch (err) {
+      alert('Fehler beim Laden: ' + err.message);
+    }
+  };
+  reader.readAsText(file, 'utf-8');
+});
+
+// ── Render ─────────────────────────────────────────────────────────────────
+function getFiltered() {
+  const search = document.getElementById('search-input').value.toLowerCase();
+  const filter = document.getElementById('filter-select').value;
+  return Object.entries(allData).filter(([offset, d]) => {
+    if (filter === 'open' && d.done) return false;
+    if (filter === 'done' && !d.done) return false;
+    if (filter === 'toolong') {
+      const used = d.translation ? countGbaBytes(d.translation) : 0;
+      if (used <= (d.byte_length || 999)) return false;
+    }
+    if (search) {
+      const inEn = d.en.toLowerCase().includes(search);
+      const inTrans = (d.translation || '').toLowerCase().includes(search);
+      const inOffset = offset.toLowerCase().includes(search);
+      if (!inEn && !inTrans && !inOffset) return false;
+    }
+    return true;
+  });
+}
+
+function renderAll() {
+  const list = document.getElementById('string-list');
+  const filtered = getFiltered();
+  const empty = document.getElementById('empty-state');
+
+  if (Object.keys(allData).length === 0) {
+    empty.style.display = 'block';
+    list.innerHTML = '';
+    updateStats();
+    return;
+  }
+  empty.style.display = 'none';
+
+  // Virtual scroll: only render first 200, load more on scroll
+  list.innerHTML = '';
+  const chunk = filtered.slice(0, 300);
+  chunk.forEach(([offset, data]) => {
+    list.appendChild(buildEntry(offset, data));
+  });
+
+  if (filtered.length > 300) {
+    const more = document.createElement('p');
+    more.style.cssText = 'text-align:center;padding:20px;color:var(--muted)';
+    more.textContent = `… und ${(filtered.length - 300).toLocaleString()} weitere. Verfeinere die Suche für mehr.`;
+    list.appendChild(more);
+  }
+
+  updateStats();
+}
+
+// ── GBA byte counter ───────────────────────────────────────────────────────
+// Mirrors the Python encode_gba_string logic in JS
+// Each ASCII letter = 1 byte, accented chars = 1 byte, \n \p = 1 byte, END = 1 byte
+function countGbaBytes(text) {
+  // Control tokens like {PLAYER} {SHADOW} etc = 1-2 bytes, treat as 1
+  let count = 0;
+  let i = 0;
+  while (i < text.length) {
+    if (text[i] === '{') {
+      const end = text.indexOf('}', i);
+      const token = end !== -1 ? text.slice(i, end + 1) : text.slice(i);
+      // COLOR/HIGHLIGHT/SHADOW have 1 arg byte → 2 bytes total
+      count += (token === '{COLOR}' || token === '{HIGHLIGHT}' || token === '{SHADOW}') ? 2 : 1;
+      i = end !== -1 ? end + 1 : text.length;
+    } else if (text.slice(i, i+2) === '\\n' || text.slice(i, i+2) === '\\p') {
+      count += 1; i += 2;
+    } else {
+      count += 1; i += 1;
+    }
+  }
+  return count + 1; // +1 for END byte (0xFF)
+}
+
+function buildEntry(offset, data) {
+  const div = document.createElement('div');
+  div.className = 'entry' + (data.done ? ' done' : '');
+  div.dataset.offset = offset;
+
+  div.innerHTML = `
+    <div class="entry-header">
+      <span class="offset-badge">${offset}</span>
+      <span style="color:#666">${data.byte_length || '?'}b</span>
+      <span class="byte-counter" id="bc-${offset.replace(/[^a-zA-Z0-9]/g,'_')}">? b</span>
+      <span class="done-badge">✓ Fertig</span>
+    </div>
+    <div class="entry-body">
+      <div class="field">
+        <label>🇬🇧 Englisch (Original)</label>
+        <div class="en-text">${escHtml(data.en)}</div>
+      </div>
+      <div class="field">
+        <label>🇩🇪 Übersetzung</label>
+        <textarea class="trans-input" placeholder="Übersetzung eingeben…">${escHtml(data.translation || '')}</textarea>
+      </div>
+    </div>
+    <div class="entry-footer">
+      <input class="comment-input" type="text" placeholder="Notiz / Kommentar…" value="${escHtml(data.comment || '')}">
+      <button class="mark-done-btn" title="Als fertig markieren">✓ Fertig</button>
+    </div>
+  `;
+
+  const textarea = div.querySelector('.trans-input');
+  const commentInput = div.querySelector('.comment-input');
+  const doneBtn = div.querySelector('.mark-done-btn');
+
+  // Initial byte count render
+  updateByteCounter(div, offset, data.translation || '', data.byte_length);
+
+  textarea.addEventListener('input', () => {
+    allData[offset].translation = textarea.value;
+    allData[offset].done = textarea.value.trim().length > 0;
+    div.classList.toggle('done', allData[offset].done);
+    updateByteCounter(div, offset, textarea.value, data.byte_length);
+    updateStats();
+  });
+
+  commentInput.addEventListener('input', () => {
+    allData[offset].comment = commentInput.value;
+  });
+
+  doneBtn.addEventListener('click', () => {
+    const isDone = !allData[offset].done;
+    allData[offset].done = isDone;
+    if (!isDone && !allData[offset].translation) allData[offset].translation = '';
+    div.classList.toggle('done', isDone);
+    updateStats();
+  });
+
+  return div;
+}
+
+function updateByteCounter(div, offset, text, maxBytes) {
+  const id = 'bc-' + offset.replace(/[^a-zA-Z0-9]/g, '_');
+  const el = div.querySelector('.byte-counter');
+  if (!el || !maxBytes) return;
+  const used = text.trim() ? countGbaBytes(text) : 0;
+  el.textContent = used ? `${used}/${maxBytes}b` : `${maxBytes}b`;
+  el.className = 'byte-counter';
+  textarea = div.querySelector('.trans-input');
+  if (!text.trim() || used <= maxBytes) {
+    el.classList.add(used > maxBytes * 0.9 ? 'warn' : 'ok');
+    textarea && textarea.classList.remove('over');
+  } else {
+    el.classList.add('over');
+    textarea && textarea.classList.add('over');
+  }
+}
+
+function escHtml(s) {
+  return String(s)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;');
+}
+
+// ── Stats ──────────────────────────────────────────────────────────────────
+function updateStats() {
+  const total = Object.keys(allData).length;
+  const done = Object.values(allData).filter(d => d.done).length;
+  const open = total - done;
+  const pct = total ? Math.round(done / total * 100) : 0;
+
+  document.getElementById('stat-total').textContent = total.toLocaleString();
+  document.getElementById('stat-done').textContent = done.toLocaleString();
+  document.getElementById('stat-open').textContent = open.toLocaleString();
+  document.getElementById('stat-pct').textContent = pct;
+  document.getElementById('progress-fill').style.width = pct + '%';
+}
+
+// ── Save ───────────────────────────────────────────────────────────────────
+function saveJSON() {
+  if (!Object.keys(allData).length) { alert('Keine Daten geladen.'); return; }
+  const json = JSON.stringify(allData, null, 2);
+  const blob = new Blob([json], { type: 'application/json; charset=utf-8' });
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = currentFile || 'de.json';
+  a.click();
+  toast('💾 Gespeichert!');
+}
+
+function copyStats() {
+  const total = Object.keys(allData).length;
+  const done = Object.values(allData).filter(d => d.done).length;
+  const pct = total ? Math.round(done / total * 100) : 0;
+  const text = `Unbound DE Übersetzung: ${done}/${total} (${pct}%) fertig`;
+  navigator.clipboard.writeText(text).then(() => toast('📋 Kopiert!'));
+}
+
+// ── Toast ──────────────────────────────────────────────────────────────────
+function toast(msg) {
+  const el = document.getElementById('toast');
+  el.textContent = msg;
+  el.classList.add('show');
+  setTimeout(() => el.classList.remove('show'), 2500);
+}
+
+// ── Live filter ────────────────────────────────────────────────────────────
+let filterTimer;
+['search-input', 'filter-select'].forEach(id => {
+  document.getElementById(id).addEventListener('input', () => {
+    clearTimeout(filterTimer);
+    filterTimer = setTimeout(renderAll, 200);
+  });
+});
+
+// Initial empty state
+document.getElementById('empty-state').style.display = 'block';
+</script>
+</body>
+</html>

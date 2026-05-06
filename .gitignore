@@ -1,0 +1,130 @@
+# ══════════════════════════════════════════════════════════════
+#  Pokémon Unbound – Translation Toolkit  |  .gitignore
+# ══════════════════════════════════════════════════════════════
+
+# ── ROM / Spieldateien (NIEMALS committen – Copyright) ────────
+*.gba
+*.gbc
+*.gb
+*.gba.bak
+*.sav
+*.srm
+*.rtc
+
+# ── Patch-Ausgaben (generiert, nicht versionieren) ────────────
+*.ups
+*.ips
+*.bps
+*.xdelta
+
+# ── Output-Ordner (gebaute ROMs) ──────────────────────────────
+output/
+
+# ── Extrahierte Englisch-Quelle (groß, generierbar) ──────────
+# Kommentiere diese Zeile aus wenn du en_source.json
+# mit ins Repo willst (damit andere nicht selbst extrahieren müssen)
+translations/en_source.json
+translations/en_source_*.json
+
+# ── Temporäre Update-Reports ──────────────────────────────────
+translations/**/update_report_*.txt
+
+# ── Python ────────────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.pyw
+.Python
+*.egg
+*.egg-info/
+dist/
+build/
+.eggs/
+pip-wheel-metadata/
+*.whl
+
+# ── Virtuelle Umgebungen ──────────────────────────────────────
+venv/
+.venv/
+env/
+.env/
+ENV/
+
+# ── Emulator-Dateien ──────────────────────────────────────────
+# mGBA
+*.mGBA*
+mGBA-*.log
+# VisualBoyAdvance
+*.sgm
+vba*.ini
+# RetroArch
+retroarch.cfg
+
+# ── Spieldaten-Dumps ──────────────────────────────────────────
+*.lz
+*.lz77
+*.narc
+*.bin
+*.dat
+*.raw
+*.chr
+*.pal
+*.map
+*.tileset
+*.tilemap
+
+# ── Windows ───────────────────────────────────────────────────
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+Desktop.ini
+$RECYCLE.BIN/
+*.lnk
+*.url
+
+# ── macOS ─────────────────────────────────────────────────────
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+.Spotlight-V100
+.Trashes
+.fseventsd
+.TemporaryItems
+
+# ── Linux ─────────────────────────────────────────────────────
+*~
+.nfs*
+.fuse_hidden*
+
+# ── Editoren ──────────────────────────────────────────────────
+.vscode/
+*.code-workspace
+.idea/
+*.iml
+*.sublime-project
+*.sublime-workspace
+*.swp
+*.swo
+*.swn
+[._]*.s[a-v][a-z]
+[._]*.sw[a-p]
+*#
+.#*
+
+# ── Logs / Temp ───────────────────────────────────────────────
+*.log
+*.tmp
+*.temp
+*.bak
+*.backup
+*.orig
+*.rej
+
+# ── Credentials / Secrets ─────────────────────────────────────
+.env
+.env.*
+secrets.*
+config.local.*
