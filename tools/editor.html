@@ -252,6 +252,24 @@
   }
   .entry.done .mark-done-btn { background: var(--done-border); color: #000; }
 
+  /* AI-translated entries */
+  .entry.ai-translated { border-color: #7b5ea7; }
+  .entry.ai-translated .entry-header { background: rgba(123,94,167,.15); }
+  .ai-badge {
+    font-size: 10px;
+    font-weight: 700;
+    padding: 2px 7px;
+    border-radius: 4px;
+    background: #4a2d6e;
+    color: #c084fc;
+    letter-spacing: .04em;
+    display: none;
+  }
+  .entry.ai-translated .ai-badge { display: inline; }
+  .entry.ai-translated.done .ai-badge { display: none; }
+  .trans-input.ai-highlight { border-color: #7b5ea7; }
+  .entry.ai-translated.done .trans-input { border-color: var(--done-border); }
+
   /* ── Empty state ── */
   #empty-state {
     text-align: center;
@@ -299,6 +317,7 @@
     <option value="done">Nur fertig</option>
     <option value="toolong">Zu lang (Bytes) ⚠</option>
     <option value="lineover">Zeile zu lang ⚠</option>
+    <option value="ai">🤖 KI – zu prüfen</option>
   </select>
 
   <button class="btn btn-blue" onclick="saveJSON()">💾 JSON speichern</button>
@@ -349,6 +368,10 @@ function getFiltered() {
       const lines = (d.translation || '').split(/\\[np]/);
       const hasOver = lines.some(l => l.replace(/\{[^}]+\}/g, 'X').length > MAX_LINE_CHARS);
       if (!hasOver) return false;
+    }
+    if (filter === 'ai') {
+      const isAi = d.comment && d.comment.includes('[KI]');
+      if (!isAi || d.done) return false;
     }
     if (filter === 'toolong') {
       const used = d.translation ? countGbaBytes(d.translation) : 0;
@@ -450,7 +473,8 @@ function updateLineWarnings(div, text) {
 
 function buildEntry(offset, data) {
   const div = document.createElement('div');
-  div.className = 'entry' + (data.done ? ' done' : '');
+  const isAi = data.comment && data.comment.includes('[KI]');
+  div.className = 'entry' + (data.done ? ' done' : '') + (isAi && !data.done ? ' ai-translated' : '');
   div.dataset.offset = offset;
 
   div.innerHTML = `
@@ -458,6 +482,7 @@ function buildEntry(offset, data) {
       <span class="offset-badge">${offset}</span>
       <span style="color:#666">${data.byte_length || '?'}b</span>
       <span class="byte-counter" id="bc-${offset.replace(/[^a-zA-Z0-9]/g,'_')}">? b</span>
+      <span class="ai-badge">🤖 KI</span>
       <span class="done-badge">✓ Fertig</span>
     </div>
     <div class="entry-body">
@@ -517,6 +542,8 @@ function buildEntry(offset, data) {
     allData[offset].done = isDone;
     if (!isDone && !allData[offset].translation) allData[offset].translation = '';
     div.classList.toggle('done', isDone);
+    // Remove AI highlight once manually confirmed
+    if (isDone) div.classList.remove('ai-translated');
     updateStats();
   });
 

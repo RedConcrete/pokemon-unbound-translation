@@ -88553,7 +88553,7 @@
   },
   "0x08CEB4C": {
     "en": "Your name is \\nÀ?",
-    "translation": "Dein name ist \\n?",
+    "translation": "Du heisst \\nÀ?",
     "comment": "",
     "byte_offset": 9235276,
     "byte_length": 17,
@@ -186785,11 +186785,11 @@
   },
   "0x1F0F858": {
     "en": "Is this who you’ll play as?",
-    "translation": "",
+    "translation": "Willst du so spielen?",
     "comment": "",
     "byte_offset": 32569432,
     "byte_length": 28,
-    "done": false
+    "done": true
   },
   "0x1F0F874": {
     "en": "Last, but not least, what is\\pyour name?",
@@ -186801,7 +186801,7 @@
   },
   "0x1F0F89C": {
     "en": "Your name is \\nÀ?",
-    "translation": "Dein name ist \\n?",
+    "translation": "Du heisst \\nÀ?",
     "comment": "",
     "byte_offset": 32569500,
     "byte_length": 17,
