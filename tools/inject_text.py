@@ -39,6 +39,7 @@ def inject(source_rom: str, lang_json: str, output_rom: str, dry_run: bool = Fal
     skipped_not_done = 0
     skipped_too_long = 0
     errors = 0
+    too_long_list = []
 
     for offset_str, entry in translations.items():
         if not entry.get("done"):
@@ -69,6 +70,14 @@ def inject(source_rom: str, lang_json: str, output_rom: str, dry_run: bool = Fal
             )
             print(f"   EN : {entry['en'][:60]}")
             print(f"   DE : {translation[:60]}")
+            too_long_list.append({
+                'offset': offset_str,
+                'over': over,
+                'used': len(encoded),
+                'max': original_len,
+                'en': entry['en'],
+                'de': translation,
+            })
             skipped_too_long += 1
             continue
 
@@ -86,6 +95,14 @@ def inject(source_rom: str, lang_json: str, output_rom: str, dry_run: bool = Fal
     print(f"  Too long   : {skipped_too_long:,}  ← shorten these!")
     print(f"  Errors     : {errors:,}")
     print("───────────────────────────────────────────────────")
+    if too_long_list:
+        print()
+        print("── Zu lange Strings ───────────────────────────────")
+        for item in too_long_list:
+            print(f"  {item['offset']}  +{item['over']}b  ({item['used']}b / {item['max']}b)")
+            print(f"    EN : {item['en'][:70]}")
+            print(f"    DE : {item['de'][:70]}")
+        print("───────────────────────────────────────────────────")
 
     if dry_run:
         print("DRY RUN – no file written.")

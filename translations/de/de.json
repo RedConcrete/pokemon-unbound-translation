@@ -16737,11 +16737,11 @@
   },
   "0x03D87AB": {
     "en": "A stick of leek to be held by a\\pFarfetch’d. It raises Farfetch’d’s\\pcritical-hit ratio.",
-    "translation": "",
+    "translation": "Ein Lauchstengel,\\pder von Porenta getragen wird.\\pEr erhöht Porentas Quote\\pfür Volltreffer.",
     "comment": "",
     "byte_offset": 4032427,
     "byte_length": 87,
-    "done": false
+    "done": true
   },
   "0x03D8802": {
     "en": "An item to be held by a Pokémon.\\pIt boosts the holding Pokémon’s\\pCOOL condition in CONTESTS.",
@@ -20529,11 +20529,11 @@
   },
   "0x03E7F27": {
     "en": " I CHOOSE YOU",
-    "translation": "",
+    "translation": "DU BIST DRAN!",
     "comment": "",
     "byte_offset": 4095783,
     "byte_length": 14,
-    "done": false
+    "done": true
   },
   "0x03E7F35": {
     "en": "GOTCHA",
@@ -24921,11 +24921,11 @@
   },
   "0x03EAFEB": {
     "en": "CHOOSE",
-    "translation": "",
+    "translation": "WAEHLE",
     "comment": "",
     "byte_offset": 4108267,
     "byte_length": 7,
-    "done": false
+    "done": true
   },
   "0x03EAFF2": {
     "en": "COME",
@@ -32385,11 +32385,11 @@
   },
   "0x04171DF": {
     "en": "Choose a Pokémon.",
-    "translation": "",
+    "translation": "Welches Pokémon.",
     "comment": "",
     "byte_offset": 4288991,
     "byte_length": 18,
-    "done": false
+    "done": true
   },
   "0x04171F1": {
     "en": "Move to where?",
@@ -32489,11 +32489,11 @@
   },
   "0x0417301": {
     "en": "Choose a Pokémon.",
-    "translation": "",
+    "translation": "Welches Pokémon.",
     "comment": "",
     "byte_offset": 4289281,
     "byte_length": 18,
-    "done": false
+    "done": true
   },
   "0x0417313": {
     "en": "Not enough HP…",
@@ -32545,19 +32545,19 @@
   },
   "0x0417396": {
     "en": "Choose Pokémon or Cancel.",
-    "translation": "",
+    "translation": "Pokémon oder nix.",
     "comment": "",
     "byte_offset": 4289430,
     "byte_length": 26,
-    "done": false
+    "done": true
   },
   "0x04173B0": {
     "en": "Choose Pokémon and confirm.",
-    "translation": "",
+    "translation": "Pokémon und weiter.",
     "comment": "",
     "byte_offset": 4289456,
     "byte_length": 28,
-    "done": false
+    "done": true
   },
   "0x04173CC": {
     "en": "Two Pokémon are needed.",
@@ -38289,11 +38289,11 @@
   },
   "0x041E0C0": {
     "en": "Choose a Pokémon.",
-    "translation": "",
+    "translation": "Welches Pokémon.",
     "comment": "",
     "byte_offset": 4317376,
     "byte_length": 18,
-    "done": false
+    "done": true
   },
   "0x041E0D2": {
     "en": "Summary",
@@ -44921,11 +44921,11 @@
   },
   "0x0458FE3": {
     "en": " Please choose a Trainer.",
-    "translation": "",
+    "translation": "Welchen Trainer.",
     "comment": "",
     "byte_offset": 4558819,
     "byte_length": 26,
-    "done": false
+    "done": true
   },
   "0x0458FFD": {
     "en": "   Please choose a Trainer for\\pa Single Battle.",
@@ -45785,11 +45785,11 @@
   },
   "0x047B09D": {
     "en": "   FARFETCH’D",
-    "translation": "",
+    "translation": "   PORENTA",
     "comment": "",
     "byte_offset": 4698269,
     "byte_length": 14,
-    "done": false
+    "done": true
   },
   "0x047B0C9": {
     "en": "   MR. MIME",
@@ -145113,11 +145113,11 @@
   },
   "0x166AD1D": {
     "en": "Farfetch’d",
-    "translation": "",
+    "translation": "Porenta",
     "comment": "",
     "byte_offset": 23506205,
     "byte_length": 11,
-    "done": false
+    "done": true
   },
   "0x166AD28": {
     "en": "Doduo",
@@ -153953,11 +153953,11 @@
   },
   "0x166DDD7": {
     "en": "Farfetch’d",
-    "translation": "",
+    "translation": "Porenta",
     "comment": "",
     "byte_offset": 23518679,
     "byte_length": 11,
-    "done": false
+    "done": true
   },
   "0x166DDE2": {
     "en": "Koffing",
@@ -186745,43 +186745,43 @@
   },
   "0x1F0F7EC": {
     "en": "Choose a character.",
-    "translation": "",
+    "translation": "Welchen Charakter.",
     "comment": "",
     "byte_offset": 32569324,
     "byte_length": 20,
-    "done": false
+    "done": true
   },
   "0x1F0F800": {
     "en": "Choose a skin tone.",
-    "translation": "",
+    "translation": "Welchen Hautton.",
     "comment": "",
     "byte_offset": 32569344,
     "byte_length": 20,
-    "done": false
+    "done": true
   },
   "0x1F0F814": {
     "en": "Choose a hair colour.",
-    "translation": "",
+    "translation": "Welche Harrfabe.",
     "comment": "",
     "byte_offset": 32569364,
     "byte_length": 22,
-    "done": false
+    "done": true
   },
   "0x1F0F82A": {
     "en": "Choose a jacket colour.",
-    "translation": "",
+    "translation": "Welche Jackenfarbe.",
     "comment": "",
     "byte_offset": 32569386,
     "byte_length": 24,
-    "done": false
+    "done": true
   },
   "0x1F0F842": {
     "en": "Choose a trim colour.",
-    "translation": "",
+    "translation": "Welche Zierfarbe.",
     "comment": "",
     "byte_offset": 32569410,
     "byte_length": 22,
-    "done": false
+    "done": true
   },
   "0x1F0F858": {
     "en": "Is this who you’ll play as?",
@@ -186929,7 +186929,7 @@
   },
   "0x1F0FF35": {
     "en": "Choose your preferred battle\\pdifficulty.{SHADOW} higher difficulty means stronger\\pTrainers and smarter wild Pokémon.",
-    "translation": "Waehle den \\pKampf-Schwierigkeitsgrad.\\p{SHADOW}Hoehere Schwierigkeit bedeutet\\pstaerkere Trainer und\\pklugere wilde Pokemon.",
+    "translation": "Waehle den \\pKampf-Schwierigkeit.\\p{SHADOW}Hoehere Schwierigkeit bedeutet\\pstaerkere Trainer und\\pklugere wilde Pokemon.",
     "comment": "",
     "byte_offset": 32571189,
     "byte_length": 111,
