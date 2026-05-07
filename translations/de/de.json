@@ -16737,7 +16737,7 @@
   },
   "0x03D87AB": {
     "en": "A stick of leek to be held by a\\pFarfetch’d. It raises Farfetch’d’s\\pcritical-hit ratio.",
-    "translation": "Ein Lauchstengel,\\pder von Porenta getragen wird.\\pEr erhöht Porentas Quote\\pfür Volltreffer.",
+    "translation": "Ein Lauch,\\pder von Porenta getragen wird.\\pEr erhöht Porentas \\pfür Volltrefferrate.",
     "comment": "",
     "byte_offset": 4032427,
     "byte_length": 87,
@@ -30793,7 +30793,7 @@
   },
   "0x03FE799": {
     "en": "Yes\\pNo",
-    "translation": "Ja\\pNe",
+    "translation": "Ja\\pNein",
     "comment": "",
     "byte_offset": 4188057,
     "byte_length": 7,
@@ -31849,7 +31849,7 @@
   },
   "0x041623D": {
     "en": "Yes\\pNo",
-    "translation": "Ja\\pNe",
+    "translation": "Ja\\pNein",
     "comment": "",
     "byte_offset": 4284989,
     "byte_length": 7,
@@ -144457,11 +144457,11 @@
   },
   "0x166A997": {
     "en": "Bulbasaur",
-    "translation": "",
+    "translation": "Bisasam",
     "comment": "",
     "byte_offset": 23505303,
     "byte_length": 10,
-    "done": false
+    "done": true
   },
   "0x166A9A2": {
     "en": "Ivysaur",
