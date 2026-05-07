@@ -198,6 +198,25 @@
   .byte-counter.over   { background: #4a0000; color: #ff6b6b; font-weight: bold; }
   .trans-input.over    { border-color: #ff6b6b !important; }
 
+  .line-warnings {
+    margin-top: 4px;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    font-size: 11px;
+    font-family: monospace;
+  }
+  .line-warn {
+    background: #4a2000;
+    color: #fca311;
+    border-radius: 3px;
+    padding: 2px 6px;
+  }
+  .line-warn.line-ok {
+    background: #1b3a2a;
+    color: #52b788;
+  }
+
   .entry-footer {
     padding: 6px 12px;
     display: flex;
@@ -272,7 +291,8 @@
     <option value="all">Alle anzeigen</option>
     <option value="open">Nur offen</option>
     <option value="done">Nur fertig</option>
-    <option value="toolong">Zu lang ⚠</option>
+    <option value="toolong">Zu lang (Bytes) ⚠</option>
+    <option value="lineover">Zeile zu lang ⚠</option>
   </select>
 
   <button class="btn btn-blue" onclick="saveJSON()">💾 JSON speichern</button>
@@ -319,6 +339,11 @@ function getFiltered() {
   return Object.entries(allData).filter(([offset, d]) => {
     if (filter === 'open' && d.done) return false;
     if (filter === 'done' && !d.done) return false;
+    if (filter === 'lineover') {
+      const lines = (d.translation || '').split(/\\[np]/);
+      const hasOver = lines.some(l => l.replace(/\{[^}]+\}/g, 'X').length > MAX_LINE_CHARS);
+      if (!hasOver) return false;
+    }
     if (filter === 'toolong') {
       const used = d.translation ? countGbaBytes(d.translation) : 0;
       if (used <= (d.byte_length || 999)) return false;
@@ -386,6 +411,37 @@ function countGbaBytes(text) {
   return count + 1; // +1 for END byte (0xFF)
 }
 
+// ── Line length checker ────────────────────────────────────────────────────
+// GBA textbox: max ~34 chars per line before text overflows
+const MAX_LINE_CHARS = 34;
+
+function checkLineLength(text) {
+  // \p and \n in the JSON are stored as literal backslash+letter
+  const lines = text.split(/\\[np]/);
+  const results = [];
+  lines.forEach((line, i) => {
+    const clean = line.replace(/\{[^}]+\}/g, 'X');
+    const len = clean.length;
+    if (len > 0) results.push({ preview: line.slice(0, 35), len, over: len > MAX_LINE_CHARS, idx: i });
+  });
+  return results;
+}
+
+function updateLineWarnings(div, text) {
+  const container = div.querySelector('.line-warnings');
+  if (!container) return;
+  if (!text.trim()) { container.innerHTML = ''; return; }
+  const results = checkLineLength(text);
+  const over = results.filter(r => r.over);
+  if (over.length === 0) {
+    container.innerHTML = '<span style="color:#52b788;font-size:11px;font-family:monospace;padding:0 4px">✓ Zeilen OK</span>';
+  } else {
+    container.innerHTML = over.map(r =>
+      `<span class="line-warn">⚠ Zeile ${r.idx+1}: ${r.len} Zeichen (max ${MAX_LINE_CHARS}) — &quot;${r.preview.replace(/&/g,'&amp;').replace(/</g,'&lt;')}…&quot;</span>`
+    ).join('');
+  }
+}
+
 function buildEntry(offset, data) {
   const div = document.createElement('div');
   div.className = 'entry' + (data.done ? ' done' : '');
@@ -408,6 +464,7 @@ function buildEntry(offset, data) {
         <textarea class="trans-input" placeholder="Übersetzung eingeben…">${escHtml(data.translation || '')}</textarea>
       </div>
     </div>
+    <div class="line-warnings" style="padding:4px 12px;background:rgba(0,0,0,.15)"></div>
     <div class="entry-footer">
       <input class="comment-input" type="text" placeholder="Notiz / Kommentar…" value="${escHtml(data.comment || '')}">
       <button class="mark-done-btn" title="Als fertig markieren">✓ Fertig</button>
@@ -418,14 +475,16 @@ function buildEntry(offset, data) {
   const commentInput = div.querySelector('.comment-input');
   const doneBtn = div.querySelector('.mark-done-btn');
 
-  // Initial byte count render
+  // Initial byte count + line check render
   updateByteCounter(div, offset, data.translation || '', data.byte_length);
+  updateLineWarnings(div, data.translation || '');
 
   textarea.addEventListener('input', () => {
     allData[offset].translation = textarea.value;
     allData[offset].done = textarea.value.trim().length > 0;
     div.classList.toggle('done', allData[offset].done);
     updateByteCounter(div, offset, textarea.value, data.byte_length);
+    updateLineWarnings(div, textarea.value);
     updateStats();
   });
 

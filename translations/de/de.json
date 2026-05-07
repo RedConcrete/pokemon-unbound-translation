@@ -5273,11 +5273,11 @@
   },
   "0x01C5A04": {
     "en": "In the world which you are about to\\penter, you will embark on a grand\\padventure with you as the hero.",
-    "translation": "",
+    "translation": "Die Welt haelt ein grosses\\pAbenteuer fuer dich bereit -\\pdu bist der Held \\pdieser Geschichte.\n",
     "comment": "",
     "byte_offset": 1858052,
     "byte_length": 102,
-    "done": false
+    "done": true
   },
   "0x01C5A6B": {
     "en": "Speak to people and check things\\pwherever you go, be it towns, roads,\\por caves. Gather information and\\phints from every source.",
@@ -30793,11 +30793,11 @@
   },
   "0x03FE799": {
     "en": "Yes\\pNo",
-    "translation": "",
+    "translation": "Ja\\pNe",
     "comment": "",
     "byte_offset": 4188057,
     "byte_length": 7,
-    "done": false
+    "done": true
   },
   "0x03FE7A8": {
     "en": "Switch\\pwhich?",
@@ -31849,11 +31849,11 @@
   },
   "0x041623D": {
     "en": "Yes\\pNo",
-    "translation": "",
+    "translation": "Ja\\pNe",
     "comment": "",
     "byte_offset": 4284989,
     "byte_length": 7,
-    "done": false
+    "done": true
   },
   "0x0416244": {
     "en": "Go back to the\\pprevious menu.",
@@ -34913,11 +34913,11 @@
   },
   "0x0418E47": {
     "en": "Your Name?",
-    "translation": "",
+    "translation": "Dein Name?",
     "comment": "",
     "byte_offset": 4296263,
     "byte_length": 11,
-    "done": false
+    "done": true
   },
   "0x0418E52": {
     "en": "Box Name?",
@@ -88033,27 +88033,27 @@
   },
   "0x08CC387": {
     "en": "Long ago…",
-    "translation": "",
+    "translation": "Längst…",
     "comment": "",
     "byte_offset": 9225095,
     "byte_length": 10,
-    "done": false
+    "done": true
   },
   "0x08CC391": {
     "en": "The Borrius Region was engulfed by\\pa great war with the Kalos Region.\\p\\pIt was a brutal war, one lasting\\pmany years.\\p\\pIn that time, Kalos managed to\\pseize the upper hand…",
-    "translation": "",
+    "translation": "Die Region Borrius wurde in einen\\p Krieg mit der Region Kalos\\pverwickelt.\\p\\pEs war ein brutaler Krieg,\\pder viele Jahre lief.\\p\\pKalos gelang es,\\pdie Oberhand zu gewinnen…",
     "comment": "",
     "byte_offset": 9225105,
     "byte_length": 170,
-    "done": false
+    "done": true
   },
   "0x08CC43B": {
     "en": "On the brink of defeat, the Borrian\\pking summoned a dark force to help{HIGHLIGHT}urn the tides of battle…",
-    "translation": "",
+    "translation": "Am Rande der Niederlage rief\\pder borrianische Koenig eine \\pdunkle Macht{HIGHLIGHT}um den \\pKrieg zu wenden",
     "comment": "",
     "byte_offset": 9225275,
     "byte_length": 97,
-    "done": false
+    "done": true
   },
   "0x08CC49C": {
     "en": "The Kalosian army’s advantage was\\plost almost instantly.{SHADOW}s soon as it entered the battlefield,\\pthe dark force used its power to{HIGHLIGHT}reate portals and transport the{HIGHLIGHT}nvading army back to Kalos…",
@@ -88497,7 +88497,7 @@
   },
   "0x08CE9CB": {
     "en": "Welcome to Pokémon Unbound!\\p\\pBefore you begin playing, please\\pbe aware that this is a non-profit\\pfan game.\\p\\pIf you paid for this game, reclaim\\pyour money immediately!",
-    "translation": "Willkommen bei Pokémon Unbound!\\p\\pBevor du beginnst: Dies ist ein kostenloses Fan-Spiel.\\p\\pHast du dafür bezahlt? Fordere dein Geld sofort zurück!",
+    "translation": "Willkommen bei Pokémon Unbound!\\p\\pBevor du beginnst \\pDies ist ein kostenloses Fan-Spiel\\p\\pHast du dafuer bezahlt? \\pFordere dein Geld sofort zurueck!",
     "comment": "",
     "byte_offset": 9234891,
     "byte_length": 167,
@@ -88505,43 +88505,43 @@
   },
   "0x08CEA72": {
     "en": "With that in mind, you are almost\\pready to enter the Borrius Region!\\pBut first…",
-    "translation": "",
+    "translation": "Bereit fuer die Region Borrius?\\pAber zuerst…",
     "comment": "",
     "byte_offset": 9235058,
     "byte_length": 80,
-    "done": false
+    "done": true
   },
   "0x08CEAC2": {
     "en": "Choose your character.",
-    "translation": "",
+    "translation": "Waehle dein Charakter.",
     "comment": "",
     "byte_offset": 9235138,
     "byte_length": 23,
-    "done": false
+    "done": true
   },
   "0x08CEAD9": {
     "en": "Choose your skin tone.",
-    "translation": "",
+    "translation": "Waehle deinen Hautton.",
     "comment": "",
     "byte_offset": 9235161,
     "byte_length": 23,
-    "done": false
+    "done": true
   },
   "0x08CEAF0": {
     "en": "Choose your hair colour.",
-    "translation": "",
+    "translation": "Waehle deine Haarfarbe.",
     "comment": "",
     "byte_offset": 9235184,
     "byte_length": 25,
-    "done": false
+    "done": true
   },
   "0x08CEB09": {
     "en": "Choose your outfit colour.",
-    "translation": "",
+    "translation": "Waehle deine Outfitfarbe.",
     "comment": "",
     "byte_offset": 9235209,
     "byte_length": 27,
-    "done": false
+    "done": true
   },
   "0x08CEB24": {
     "en": "Last, but not least, what is your\\pname?",
@@ -88553,11 +88553,11 @@
   },
   "0x08CEB4C": {
     "en": "Your name is \\nÀ?",
-    "translation": "",
+    "translation": "Dein name ist \\n?",
     "comment": "",
     "byte_offset": 9235276,
     "byte_length": 17,
-    "done": false
+    "done": true
   },
   "0x08CEB5F": {
     "en": "           Present Day",
@@ -186713,11 +186713,11 @@
   },
   "0x1F0F5A6": {
     "en": "Welcome to Pokémon Unbound!\\p\\pBefore you begin playing, please\\pbe aware that this is a non-profit\\pfan game.\\p\\pIf you paid for this game, reclaim\\pyour money immediately!",
-    "translation": "Willkommen bei Pokémon Unbound!\\p\\pBevor du beginnst: Dies ist ein kostenloses Fan-Spiel.\\p\\pHast du dafür bezahlt? Fordere dein Geld sofort zurück!",
+    "translation": "Willkommen bei Pokémon Unbound!\\p\\pBevor du beginnst \\pDies ist ein kostenloses Fan-Spiel\\p\\pHast du dafuer bezahlt? \\pFordere dein Geld sofort zurueck!",
     "comment": "",
     "byte_offset": 32568742,
     "byte_length": 167,
-    "done": false
+    "done": true
   },
   "0x1F0F6E7": {
     "en": " there is no rush.",
@@ -186729,19 +186729,19 @@
   },
   "0x1F0F6FA": {
     "en": "Speak to people, and check things\\pwherever you go, be it towns,\\proads, or caves.\\p\\pThe world and its people are alive.\\pAs you grow, they will grow along\\pwith you.",
-    "translation": "",
+    "translation": "Sprich mit Leuten und erkunde \\palles auf deinem Weg - \\pStaedte, Strassen und Hoehlen.\\p\\pDie Welt und ihre Bewohner \\pwachsen mit dir,\\pwaehrend du staerker wirst.",
     "comment": "",
     "byte_offset": 32569082,
     "byte_length": 162,
-    "done": false
+    "done": true
   },
   "0x1F0F79C": {
     "en": "With that in mind, you are almost\\pready to enter the Borrius Region!\\pBut first…",
-    "translation": "",
+    "translation": "Bereit fuer die Region Borrius?\\pAber zuerst…",
     "comment": "",
     "byte_offset": 32569244,
     "byte_length": 80,
-    "done": false
+    "done": true
   },
   "0x1F0F7EC": {
     "en": "Choose a character.",
@@ -186801,19 +186801,19 @@
   },
   "0x1F0F89C": {
     "en": "Your name is \\nÀ?",
-    "translation": "",
+    "translation": "Dein name ist \\n?",
     "comment": "",
     "byte_offset": 32569500,
     "byte_length": 17,
-    "done": false
+    "done": true
   },
   "0x1F0F8AD": {
     "en": "Now, let’s determine the best way\\pfor you to play the game.{SHADOW}s this your first time playing\\pPokémon Unbound?",
-    "translation": "",
+    "translation": "Finden wir heraus,\\pwie du am besten spielst.\\p{SHADOW}Ist das dein erstes Mal,\\pdass du Pokemon Unbound spielst?",
     "comment": "",
     "byte_offset": 32569517,
     "byte_length": 109,
-    "done": false
+    "done": true
   },
   "0x1F0F91A": {
     "en": "Are you using the Eclipse, GPemu,\\pJohnGBA, or No$GBA emulators?",
@@ -186913,11 +186913,11 @@
   },
   "0x1F0FE27": {
     "en": "Choose your preferred puzzle\\pdifficulty.{SHADOW} harder difficulty means harder\\pthought and stealth puzzles.",
-    "translation": "",
+    "translation": "Waehle den \\pRaetsel-Schwierigkeitsgrad.\\p{SHADOW}Hoehere Schwierigkeit bedeutet\\pschwerere Raetsel.",
     "comment": "",
     "byte_offset": 32570919,
     "byte_length": 103,
-    "done": false
+    "done": true
   },
   "0x1F0FEC5": {
     "en": "If you change it at any point using\\pthe Options Menu, be sure to leave{HIGHLIGHT}he area for the changes to take{HIGHLIGHT}ffect.",
@@ -186929,11 +186929,11 @@
   },
   "0x1F0FF35": {
     "en": "Choose your preferred battle\\pdifficulty.{SHADOW} higher difficulty means stronger\\pTrainers and smarter wild Pokémon.",
-    "translation": "",
+    "translation": "Waehle den \\pKampf-Schwierigkeitsgrad.\\p{SHADOW}Hoehere Schwierigkeit bedeutet\\pstaerkere Trainer und\\pklugere wilde Pokemon.",
     "comment": "",
     "byte_offset": 32571189,
     "byte_length": 111,
-    "done": false
+    "done": true
   },
   "0x1F100AC": {
     "en": " Difficulty?",
@@ -187049,11 +187049,11 @@
   },
   "0x1F1064B": {
     "en": "Challenging",
-    "translation": "",
+    "translation": "Fordernd",
     "comment": "",
     "byte_offset": 32573003,
     "byte_length": 12,
-    "done": false
+    "done": true
   },
   "0x1F10657": {
     "en": "Back",
@@ -187217,11 +187217,11 @@
   },
   "0x1F11016": {
     "en": "Long ago…",
-    "translation": "",
+    "translation": "Längst…",
     "comment": "",
     "byte_offset": 32575510,
     "byte_length": 10,
-    "done": false
+    "done": true
   },
   "0x1F11020": {
     "en": "The Borrius Region was engulfed by\\pa great war with a foreign land.\\p\\pIt was a brutal war, one which\\plasted many years.\\p\\pDuring that time, the enemy managed\\pto seize the upper hand…",
@@ -187233,11 +187233,11 @@
   },
   "0x1F110D5": {
     "en": "On the brink of defeat, the Borrian\\pking summoned a dark force to help{HIGHLIGHT}urn the tides of battle…",
-    "translation": "",
+    "translation": "Am Rande der Niederlage rief\\pder borrianische Koenig eine \\pdunkle Macht{HIGHLIGHT}um den \\pKrieg zu wenden",
     "comment": "",
     "byte_offset": 32575701,
     "byte_length": 97,
-    "done": false
+    "done": true
   },
   "0x1F11136": {
     "en": "The foreign army’s advantage was\\plost almost instantly.{SHADOW}s soon as it entered the battlefield,\\pthe dark force used its power to{HIGHLIGHT}reate portals and transport the{HIGHLIGHT}nvading army back home…",
@@ -204073,11 +204073,11 @@
   },
   "0x1F4DC09": {
     "en": "Puzzle Difficulty",
-    "translation": "",
+    "translation": "Raetselschwierig",
     "comment": "",
     "byte_offset": 32824329,
     "byte_length": 18,
-    "done": false
+    "done": true
   },
   "0x1F4DC1B": {
     "en": "Auto Item Sort",
