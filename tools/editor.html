@@ -311,6 +311,7 @@
   <input type="file" id="file-input" accept=".json">
 
   <input type="text" id="search-input" placeholder="Suche (EN oder Übersetzung)…">
+  <span id="search-count" style="font-size:12px;color:var(--muted);white-space:nowrap;display:none"></span>
 
   <select id="filter-select">
     <option value="all">Alle anzeigen</option>
@@ -413,6 +414,16 @@ function renderAll() {
     more.style.cssText = 'text-align:center;padding:20px;color:var(--muted)';
     more.textContent = `… und ${(filtered.length - 300).toLocaleString()} weitere. Verfeinere die Suche für mehr.`;
     list.appendChild(more);
+  }
+
+  const countEl = document.getElementById('search-count');
+  const search = document.getElementById('search-input').value;
+  const filter = document.getElementById('filter-select').value;
+  if (search || filter !== 'all') {
+    countEl.textContent = `${filtered.length.toLocaleString()} Treffer`;
+    countEl.style.display = 'inline';
+  } else {
+    countEl.style.display = 'none';
   }
 
   updateStats();

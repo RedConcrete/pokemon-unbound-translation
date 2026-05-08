@@ -365,12 +365,12 @@ python3 tools/create_language.py translations/en_source.json translations/fr/fr.
 
 ## Mitmachen
 
-Alle Sprachen willkommen! So startest du:
+Alle Sprachen willkommen! Schreib mich an um Zugriff auf das Repo zu bekommen, dann direkt loslegen:
 
-1. Repo forken
+1. Repo klonen: `git clone https://github.com/RedConcrete/pokemon-unbound-translation.git`
 2. `python3 tools/create_language.py translations/en_source.json translations/XX/XX.json`
 3. Im Editor übersetzen
-4. Pull Request erstellen
+4. Direkt pushen: `git add translations/XX/XX.json && git commit -m "XX: Start" && git push`
 
 Aktueller Status der Sprachen: `python3 tools/stats.py`
 

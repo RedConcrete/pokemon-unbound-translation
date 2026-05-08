@@ -112,8 +112,6 @@ def inject(source_rom: str, lang_json: str, output_rom: str, dry_run: bool = Fal
     out.parent.mkdir(parents=True, exist_ok=True)
     out.write_bytes(rom_data)
     print(f"ROM written: {out}")
-    print()
-    print("Next: patch the .gba with your UPS patcher to create a distributable patch.")
 
 
 def main():
