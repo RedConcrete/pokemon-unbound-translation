@@ -195249,11 +195249,11 @@
   },
   "0x1F2C45F": {
     "en": "I’m sorry, but I can’t blend the\\p\\nÁ.{SHADOW}lease choose a different Berry.",
-    "translation": "Entschuldigung, ich kann die\\p\\nBeere nicht verarbeiten.{SHADOW}Bitte waehle eine andere Beere.",
-    "comment": "[KI]",
+    "translation": "Ich kann die\\p\\nÁ nicht verarbeiten.\\p{SHADOW}Bitte waehle eine andere Beere.",
+    "comment": "",
     "byte_offset": 32687199,
     "byte_length": 70,
-    "done": false
+    "done": true
   },
   "0x1F2C4DF": {
     "en": " is that correct?",
@@ -195697,11 +195697,11 @@
   },
   "0x1F2D02E": {
     "en": "Hurry up, \\nÀ, choose a\\pPokémon.",
-    "translation": "",
+    "translation": "schnell! \\nÁ nimm ein \\pPokémom!",
     "comment": "",
     "byte_offset": 32690222,
     "byte_length": 32,
-    "done": false
+    "done": true
   },
   "0x1F2D04E": {
     "en": "Let’s use our new Pokémon to break\\pout of here!",
@@ -195833,11 +195833,11 @@
   },
   "0x1F2D6E9": {
     "en": "Go ahead, choose a Pokémon.",
-    "translation": "",
+    "translation": "Los nimm ein Pokémom.",
     "comment": "",
     "byte_offset": 32691945,
     "byte_length": 28,
-    "done": false
+    "done": true
   },
   "0x1F2D766": {
     "en": " nature.",
@@ -220497,19 +220497,19 @@
   },
   "0x1F7B021": {
     "en": " choose the one that\\psuits you best.",
-    "translation": "",
+    "translation": "waehle eins das dir am \\pbesten passt",
     "comment": "",
     "byte_offset": 33009697,
     "byte_length": 37,
-    "done": false
+    "done": true
   },
   "0x1F7B04E": {
     "en": " choose the one that\\psuits you best.",
-    "translation": "",
+    "translation": "waehle eins das dir am \\pbesten passt",
     "comment": "",
     "byte_offset": 33009742,
     "byte_length": 37,
-    "done": false
+    "done": true
   },
   "0x1F7B358": {
     "en": " and make a real impact…",
@@ -231153,11 +231153,11 @@
   },
   "0x1F981C7": {
     "en": "Woohoo!\\pChoose a Pokémon!",
-    "translation": "",
+    "translation": "Wow! \\pwawhle eine Pokémon",
     "comment": "",
     "byte_offset": 33128903,
     "byte_length": 26,
-    "done": false
+    "done": true
   },
   "0x1F9824C": {
     "en": "s the scoop!{SHADOW}t’s got a fancier Ball now!",
