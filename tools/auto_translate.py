@@ -188,8 +188,7 @@ def auto_translate(lang_file: str, filter_text: str = None, max_length: int = No
             for item, translation in zip(batch, translations):
                 if translation.strip():
                     data[item["offset"]]["translation"] = translation.strip()
-                    data[item["offset"]]["done"] = True
-                    # Mark as AI-translated for review in editor
+                    data[item["offset"]]["done"] = False  # Needs human review in editor
                     existing_comment = data[item["offset"]].get("comment", "")
                     if "[KI]" not in existing_comment:
                         data[item["offset"]]["comment"] = ("[KI] " + existing_comment).strip()

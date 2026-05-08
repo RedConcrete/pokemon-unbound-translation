@@ -299,6 +299,7 @@
   <div class="stats">
     <div class="stat">Gesamt: <span id="stat-total">0</span></div>
     <div class="stat">Fertig: <span id="stat-done">0</span></div>
+    <div class="stat">Ausgefüllt: <span id="stat-filled">0</span></div>
     <div class="stat">Offen: <span id="stat-open">0</span></div>
     <div class="stat"><span id="stat-pct">0</span>%</div>
   </div>
@@ -456,6 +457,17 @@ function checkLineLength(text) {
   return results;
 }
 
+function isTranslationValid(text, byteLength) {
+  if (!text.trim()) return { ok: false, reason: 'Kein Text' };
+  if (byteLength) {
+    const used = countGbaBytes(text);
+    if (used > byteLength) return { ok: false, reason: `${used}/${byteLength}b – zu lang` };
+  }
+  const over = checkLineLength(text).filter(l => l.over);
+  if (over.length > 0) return { ok: false, reason: `Zeile ${over[0].idx + 1}: ${over[0].len}/${MAX_LINE_CHARS} Zeichen` };
+  return { ok: true };
+}
+
 function updateLineWarnings(div, text) {
   const container = div.querySelector('.line-warnings');
   if (!container) return;
@@ -526,8 +538,14 @@ function buildEntry(offset, data) {
 
   textarea.addEventListener('input', () => {
     allData[offset].translation = textarea.value;
-    allData[offset].done = textarea.value.trim().length > 0;
-    div.classList.toggle('done', allData[offset].done);
+    if (allData[offset].done) {
+      const v = isTranslationValid(textarea.value, data.byte_length);
+      if (!v.ok) {
+        allData[offset].done = false;
+        div.classList.remove('done');
+        if ((allData[offset].comment || '').includes('[KI]')) div.classList.add('ai-translated');
+      }
+    }
     updateByteCounter(div, offset, textarea.value, data.byte_length);
     updateLineWarnings(div, textarea.value);
     updateStats();
@@ -538,12 +556,28 @@ function buildEntry(offset, data) {
   });
 
   doneBtn.addEventListener('click', () => {
-    const isDone = !allData[offset].done;
+    const wasDone = allData[offset].done;
+    if (!wasDone) {
+      const v = isTranslationValid(allData[offset].translation || '', data.byte_length);
+      if (!v.ok) {
+        const orig = doneBtn.textContent;
+        doneBtn.textContent = '✗ ' + v.reason;
+        doneBtn.style.cssText = 'border-color:#ff6b6b;color:#ff6b6b';
+        setTimeout(() => { doneBtn.textContent = orig; doneBtn.style.cssText = ''; }, 2500);
+        return;
+      }
+    }
+    const isDone = !wasDone;
     allData[offset].done = isDone;
-    if (!isDone && !allData[offset].translation) allData[offset].translation = '';
     div.classList.toggle('done', isDone);
-    // Remove AI highlight once manually confirmed
-    if (isDone) div.classList.remove('ai-translated');
+    if (isDone) {
+      div.classList.remove('ai-translated');
+      const c = allData[offset].comment || '';
+      if (c.includes('[KI]')) {
+        allData[offset].comment = c.replace('[KI]', '').trim();
+        commentInput.value = allData[offset].comment;
+      }
+    }
     updateStats();
   });
 
@@ -579,11 +613,13 @@ function escHtml(s) {
 function updateStats() {
   const total = Object.keys(allData).length;
   const done = Object.values(allData).filter(d => d.done).length;
-  const open = total - done;
+  const filled = Object.values(allData).filter(d => !d.done && (d.translation || '').trim().length > 0).length;
+  const open = total - done - filled;
   const pct = total ? Math.round(done / total * 100) : 0;
 
   document.getElementById('stat-total').textContent = total.toLocaleString();
   document.getElementById('stat-done').textContent = done.toLocaleString();
+  document.getElementById('stat-filled').textContent = filled.toLocaleString();
   document.getElementById('stat-open').textContent = open.toLocaleString();
   document.getElementById('stat-pct').textContent = pct;
   document.getElementById('progress-fill').style.width = pct + '%';

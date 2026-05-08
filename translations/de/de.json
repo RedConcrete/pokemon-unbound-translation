@@ -3729,8 +3729,8 @@
   },
   "0x01BC47C": {
     "en": "A Pokémon holding the \\nÁ\\pBerry can’t be traded.",
-    "translation": "",
-    "comment": "",
+    "translation": "Ein Pokémon mit einer \\nÁ\\pBeere kann nicht gehandelt werden.",
+    "comment": "[KI]",
     "byte_offset": 1819772,
     "byte_length": 48,
     "done": false
@@ -3985,8 +3985,8 @@
   },
   "0x01BCAF2": {
     "en": "Two to five Trainers can make\\pBERRY POWDER together.",
-    "translation": "",
-    "comment": "",
+    "translation": "Zwei bis fuenf Trainer koennen\\pBEERENPULVER zusammen herstellen.",
+    "comment": "[KI]",
     "byte_offset": 1821426,
     "byte_length": 53,
     "done": false
@@ -4001,8 +4001,8 @@
   },
   "0x01BCB81": {
     "en": "To use the Berry Crush service,\\pyou must have at least one Berry.",
-    "translation": "",
-    "comment": "",
+    "translation": "Um den Beeren-Crush zu nutzen,\\nmusst du mindestens eine Beere\\phaben.",
+    "comment": "[KI]",
     "byte_offset": 1821569,
     "byte_length": 66,
     "done": false
@@ -4017,8 +4017,8 @@
   },
   "0x01BCC00": {
     "en": "No Pokémon holding the \\nÁ\\pBerry may enter the Union Room.",
-    "translation": "",
-    "comment": "",
+    "translation": "Kein Pokémon mit einer \\nÁ\\pBeere darf den Union Room\\nbetreten.",
+    "comment": "[KI]",
     "byte_offset": 1821696,
     "byte_length": 58,
     "done": false
@@ -4065,8 +4065,8 @@
   },
   "0x01BD362": {
     "en": "Would you like to use the\\pBerry Crush System?",
-    "translation": "",
-    "comment": "",
+    "translation": "Moechtest du das\\pBeeren-Crush-System nutzen?",
+    "comment": "[KI]",
     "byte_offset": 1823586,
     "byte_length": 46,
     "done": false
@@ -5673,8 +5673,8 @@
   },
   "0x02374F7": {
     "en": "Berry Juice",
-    "translation": "",
-    "comment": "",
+    "translation": "Beerensaft",
+    "comment": "[KI]",
     "byte_offset": 2323703,
     "byte_length": 12,
     "done": false
@@ -17665,8 +17665,8 @@
   },
   "0x03DAF52": {
     "en": "A jar for storing BERRY POWDER\\pmade using a BERRY CRUSHER.",
-    "translation": "",
-    "comment": "",
+    "translation": "Ein Behaeltnis fuer BEERENPULVER\\naus einem BEERENZERSTOERER.",
+    "comment": "[KI]",
     "byte_offset": 4042578,
     "byte_length": 59,
     "done": false
@@ -18033,8 +18033,8 @@
   },
   "0x03DB7AD": {
     "en": "           Berry Juice",
-    "translation": "",
-    "comment": "",
+    "translation": "Beerensaft",
+    "comment": "[KI]",
     "byte_offset": 4044717,
     "byte_length": 23,
     "done": false
@@ -18681,344 +18681,344 @@
   },
   "0x03DC701": {
     "en": "   Cheri Berry",
-    "translation": "",
-    "comment": "",
+    "translation": "Cheri-Beere",
+    "comment": "[KI]",
     "byte_offset": 4048641,
     "byte_length": 15,
     "done": false
   },
   "0x03DC72C": {
     "en": "    Chesto Berry",
-    "translation": "",
-    "comment": "",
+    "translation": "Chesto-Beere",
+    "comment": "[KI]",
     "byte_offset": 4048684,
     "byte_length": 17,
     "done": false
   },
   "0x03DC758": {
     "en": "    Pecha Berry",
-    "translation": "",
-    "comment": "",
+    "translation": "Pecha-Beere",
+    "comment": "[KI]",
     "byte_offset": 4048728,
     "byte_length": 16,
     "done": false
   },
   "0x03DC784": {
     "en": "    Rawst Berry",
-    "translation": "",
-    "comment": "",
+    "translation": "Rawst-Beere",
+    "comment": "[KI]",
     "byte_offset": 4048772,
     "byte_length": 16,
     "done": false
   },
   "0x03DC7B0": {
     "en": "    Aspear Berry",
-    "translation": "",
-    "comment": "",
+    "translation": "Aspear-Beere",
+    "comment": "[KI]",
     "byte_offset": 4048816,
     "byte_length": 17,
     "done": false
   },
   "0x03DC7DC": {
     "en": "    Leppa Berry",
-    "translation": "",
-    "comment": "",
+    "translation": "Leppa-Beere",
+    "comment": "[KI]",
     "byte_offset": 4048860,
     "byte_length": 16,
     "done": false
   },
   "0x03DC808": {
     "en": "    Oran Berry",
-    "translation": "",
-    "comment": "",
+    "translation": "Oran-Beere",
+    "comment": "[KI]",
     "byte_offset": 4048904,
     "byte_length": 15,
     "done": false
   },
   "0x03DC834": {
     "en": "    Persim Berry",
-    "translation": "",
-    "comment": "",
+    "translation": "Persim-Beere",
+    "comment": "[KI]",
     "byte_offset": 4048948,
     "byte_length": 17,
     "done": false
   },
   "0x03DC860": {
     "en": "    Lum Berry",
-    "translation": "",
-    "comment": "",
+    "translation": "Lum-Beere",
+    "comment": "[KI]",
     "byte_offset": 4048992,
     "byte_length": 14,
     "done": false
   },
   "0x03DC88C": {
     "en": "    Sitrus Berry",
-    "translation": "",
-    "comment": "",
+    "translation": "Sitrus-Beere",
+    "comment": "[KI]",
     "byte_offset": 4049036,
     "byte_length": 17,
     "done": false
   },
   "0x03DC8B8": {
     "en": "    Figy Berry",
-    "translation": "",
-    "comment": "",
+    "translation": "Figy-Beere",
+    "comment": "[KI]",
     "byte_offset": 4049080,
     "byte_length": 15,
     "done": false
   },
   "0x03DC8DE": {
     "en": "          Wiki Berry",
-    "translation": "",
-    "comment": "",
+    "translation": "Wiki-Beere",
+    "comment": "[KI]",
     "byte_offset": 4049118,
     "byte_length": 21,
     "done": false
   },
   "0x03DC90A": {
     "en": "          Mago Berry",
-    "translation": "",
-    "comment": "",
+    "translation": "Mago-Beere",
+    "comment": "[KI]",
     "byte_offset": 4049162,
     "byte_length": 21,
     "done": false
   },
   "0x03DC935": {
     "en": "           Aguav Berry",
-    "translation": "",
-    "comment": "",
+    "translation": "Aguav-Beere",
+    "comment": "[KI]",
     "byte_offset": 4049205,
     "byte_length": 23,
     "done": false
   },
   "0x03DC960": {
     "en": "            Iapapa Berry",
-    "translation": "",
-    "comment": "",
+    "translation": "Iapapa-Beere",
+    "comment": "[KI]",
     "byte_offset": 4049248,
     "byte_length": 25,
     "done": false
   },
   "0x03DC98E": {
     "en": "          Razz Berry",
-    "translation": "",
-    "comment": "",
+    "translation": "Razz-Beere",
+    "comment": "[KI]",
     "byte_offset": 4049294,
     "byte_length": 21,
     "done": false
   },
   "0x03DC9BA": {
     "en": "          Bluk Berry",
-    "translation": "",
-    "comment": "",
+    "translation": "Bluk-Beere",
+    "comment": "[KI]",
     "byte_offset": 4049338,
     "byte_length": 21,
     "done": false
   },
   "0x03DC9E5": {
     "en": "           Nanab Berry",
-    "translation": "",
-    "comment": "",
+    "translation": "Nanab-Beere",
+    "comment": "[KI]",
     "byte_offset": 4049381,
     "byte_length": 23,
     "done": false
   },
   "0x03DCA10": {
     "en": "            Wepear Berry",
-    "translation": "",
-    "comment": "",
+    "translation": "Wepear-Beere",
+    "comment": "[KI]",
     "byte_offset": 4049424,
     "byte_length": 25,
     "done": false
   },
   "0x03DCA3D": {
     "en": "           Pinap Berry",
-    "translation": "",
-    "comment": "",
+    "translation": "Pinap-Beere",
+    "comment": "[KI]",
     "byte_offset": 4049469,
     "byte_length": 23,
     "done": false
   },
   "0x03DCA69": {
     "en": "           Pomeg Berry",
-    "translation": "",
-    "comment": "",
+    "translation": "Pomeg-Beere",
+    "comment": "[KI]",
     "byte_offset": 4049513,
     "byte_length": 23,
     "done": false
   },
   "0x03DCA94": {
     "en": "            Kelpsy Berry",
-    "translation": "",
-    "comment": "",
+    "translation": "Kelpsy-Beere",
+    "comment": "[KI]",
     "byte_offset": 4049556,
     "byte_length": 25,
     "done": false
   },
   "0x03DCAC0": {
     "en": "            Qualot Berry",
-    "translation": "",
-    "comment": "",
+    "translation": "Qualot-Beere",
+    "comment": "[KI]",
     "byte_offset": 4049600,
     "byte_length": 25,
     "done": false
   },
   "0x03DCAEC": {
     "en": "            Hondew Berry",
-    "translation": "",
-    "comment": "",
+    "translation": "Hondew-Beere",
+    "comment": "[KI]",
     "byte_offset": 4049644,
     "byte_length": 25,
     "done": false
   },
   "0x03DCB19": {
     "en": "           Grepa Berry",
-    "translation": "",
-    "comment": "",
+    "translation": "Grepa-Beere",
+    "comment": "[KI]",
     "byte_offset": 4049689,
     "byte_length": 23,
     "done": false
   },
   "0x03DCB44": {
     "en": "            Tamato Berry",
-    "translation": "",
-    "comment": "",
+    "translation": "Tamato-Beere",
+    "comment": "[KI]",
     "byte_offset": 4049732,
     "byte_length": 25,
     "done": false
   },
   "0x03DCB71": {
     "en": "           Cornn Berry",
-    "translation": "",
-    "comment": "",
+    "translation": "Cornn-Beere",
+    "comment": "[KI]",
     "byte_offset": 4049777,
     "byte_length": 23,
     "done": false
   },
   "0x03DCB9C": {
     "en": "            Magost Berry",
-    "translation": "",
-    "comment": "",
+    "translation": "Magost-Beere",
+    "comment": "[KI]",
     "byte_offset": 4049820,
     "byte_length": 25,
     "done": false
   },
   "0x03DCBC8": {
     "en": "            Rabuta Berry",
-    "translation": "",
-    "comment": "",
+    "translation": "Rabuta-Beere",
+    "comment": "[KI]",
     "byte_offset": 4049864,
     "byte_length": 25,
     "done": false
   },
   "0x03DCBF5": {
     "en": "           Nomel Berry",
-    "translation": "",
-    "comment": "",
+    "translation": "Nomel-Beere",
+    "comment": "[KI]",
     "byte_offset": 4049909,
     "byte_length": 23,
     "done": false
   },
   "0x03DCC20": {
     "en": "            Spelon Berry",
-    "translation": "",
-    "comment": "",
+    "translation": "Spelon-Beere",
+    "comment": "[KI]",
     "byte_offset": 4049952,
     "byte_length": 25,
     "done": false
   },
   "0x03DCC4C": {
     "en": "            Pamtre Berry",
-    "translation": "",
-    "comment": "",
+    "translation": "Pamtre-Beere",
+    "comment": "[KI]",
     "byte_offset": 4049996,
     "byte_length": 25,
     "done": false
   },
   "0x03DCC78": {
     "en": "            Watmel Berry",
-    "translation": "",
-    "comment": "",
+    "translation": "Watmel-Beere",
+    "comment": "[KI]",
     "byte_offset": 4050040,
     "byte_length": 25,
     "done": false
   },
   "0x03DCCA5": {
     "en": "           Durin Berry",
-    "translation": "",
-    "comment": "",
+    "translation": "Durin-Beere",
+    "comment": "[KI]",
     "byte_offset": 4050085,
     "byte_length": 23,
     "done": false
   },
   "0x03DCCD1": {
     "en": "           Belue Berry",
-    "translation": "",
-    "comment": "",
+    "translation": "Belue-Beere",
+    "comment": "[KI]",
     "byte_offset": 4050129,
     "byte_length": 23,
     "done": false
   },
   "0x03DCCFC": {
     "en": "            Liechi Berry",
-    "translation": "",
-    "comment": "",
+    "translation": "Liechi-Beere",
+    "comment": "[KI]",
     "byte_offset": 4050172,
     "byte_length": 25,
     "done": false
   },
   "0x03DCD28": {
     "en": "            Ganlon Berry",
-    "translation": "",
-    "comment": "",
+    "translation": "Ganlon-Beere",
+    "comment": "[KI]",
     "byte_offset": 4050216,
     "byte_length": 25,
     "done": false
   },
   "0x03DCD55": {
     "en": "           Salac Berry",
-    "translation": "",
-    "comment": "",
+    "translation": "Salac-Beere",
+    "comment": "[KI]",
     "byte_offset": 4050261,
     "byte_length": 23,
     "done": false
   },
   "0x03DCD80": {
     "en": "            Petaya Berry",
-    "translation": "",
-    "comment": "",
+    "translation": "Petaya-Beere",
+    "comment": "[KI]",
     "byte_offset": 4050304,
     "byte_length": 25,
     "done": false
   },
   "0x03DCDAC": {
     "en": "            Apicot Berry",
-    "translation": "",
-    "comment": "",
+    "translation": "Apicot-Beere",
+    "comment": "[KI]",
     "byte_offset": 4050348,
     "byte_length": 25,
     "done": false
   },
   "0x03DCDD8": {
     "en": "            Lansat Berry",
-    "translation": "",
-    "comment": "",
+    "translation": "Lansat-Beere",
+    "comment": "[KI]",
     "byte_offset": 4050392,
     "byte_length": 25,
     "done": false
   },
   "0x03DCE05": {
     "en": "           Starf Berry",
-    "translation": "",
-    "comment": "",
+    "translation": "Starf-Beere",
+    "comment": "[KI]",
     "byte_offset": 4050437,
     "byte_length": 23,
     "done": false
   },
   "0x03DCE30": {
     "en": "            Enigma Berry",
-    "translation": "",
-    "comment": "",
+    "translation": "Raetsel-Beere",
+    "comment": "[KI]",
     "byte_offset": 4050480,
     "byte_length": 25,
     "done": false
@@ -20025,8 +20025,8 @@
   },
   "0x03DEED9": {
     "en": "           Berry Pouch",
-    "translation": "",
-    "comment": "",
+    "translation": "Beerenbeutel",
+    "comment": "[KI]",
     "byte_offset": 4058841,
     "byte_length": 23,
     "done": false
@@ -27009,8 +27009,8 @@
   },
   "0x03EC587": {
     "en": "BERRY",
-    "translation": "",
-    "comment": "",
+    "translation": "BEERE",
+    "comment": "[KI]",
     "byte_offset": 4113799,
     "byte_length": 6,
     "done": false
@@ -27793,8 +27793,8 @@
   },
   "0x03EF119": {
     "en": "BERRY FOREST",
-    "translation": "",
-    "comment": "",
+    "translation": "BEERENWALD",
+    "comment": "[KI]",
     "byte_offset": 4124953,
     "byte_length": 13,
     "done": false
@@ -30585,16 +30585,16 @@
   },
   "0x03FD876": {
     "en": "The Box is full!\\pYou can’t catch any more!{SHADOW}Enigma Berry",
-    "translation": "",
-    "comment": "",
+    "translation": "Die Box ist voll!\\pDu kannst keine weiteren\\pfangen!{SHADOW}Raetsel-Beere",
+    "comment": "[KI]",
     "byte_offset": 4184182,
     "byte_length": 57,
     "done": false
   },
   "0x03FD8AF": {
     "en": " Berry",
-    "translation": "",
-    "comment": "",
+    "translation": "Beere",
+    "comment": "[KI]",
     "byte_offset": 4184239,
     "byte_length": 7,
     "done": false
@@ -31921,8 +31921,8 @@
   },
   "0x04162BD": {
     "en": " Berry",
-    "translation": "",
-    "comment": "",
+    "translation": "Beere",
+    "comment": "[KI]",
     "byte_offset": 4285117,
     "byte_length": 7,
     "done": false
@@ -32081,16 +32081,16 @@
   },
   "0x041670A": {
     "en": "Berry Pouch",
-    "translation": "",
-    "comment": "",
+    "translation": "Beerenbeutel",
+    "comment": "[KI]",
     "byte_offset": 4286218,
     "byte_length": 12,
     "done": false
   },
   "0x0416716": {
     "en": "The Berry Pouch will be\\pput away.",
-    "translation": "",
-    "comment": "",
+    "translation": "Der Beerenbeutel wird\\peingelagert.",
+    "comment": "[KI]",
     "byte_offset": 4286230,
     "byte_length": 34,
     "done": false
@@ -33657,8 +33657,8 @@
   },
   "0x0417DE1": {
     "en": "Berry Pouch",
-    "translation": "",
-    "comment": "",
+    "translation": "Beerenbeutel",
+    "comment": "[KI]",
     "byte_offset": 4292065,
     "byte_length": 12,
     "done": false
@@ -33745,8 +33745,8 @@
   },
   "0x0417E5A": {
     "en": "BERRY CRUSH",
-    "translation": "",
-    "comment": "",
+    "translation": "BEEREN-ZERQUETSCHEN",
+    "comment": "[KI]",
     "byte_offset": 4292186,
     "byte_length": 12,
     "done": false
@@ -33761,8 +33761,8 @@
   },
   "0x0417E7F": {
     "en": "DODRIO BERRY-PICKING",
-    "translation": "",
-    "comment": "",
+    "translation": "DODRIO BEEREN-SAMMELN",
+    "comment": "[KI]",
     "byte_offset": 4292223,
     "byte_length": 21,
     "done": false
@@ -35449,8 +35449,8 @@
   },
   "0x0419D7D": {
     "en": "BERRY CRUSH",
-    "translation": "",
-    "comment": "",
+    "translation": "BEEREN-ZERQUETSCHEN",
+    "comment": "[KI]",
     "byte_offset": 4300157,
     "byte_length": 12,
     "done": false
@@ -37081,16 +37081,16 @@
   },
   "0x041CC9F": {
     "en": "DODRIO BERRY-PICKING RECORDS",
-    "translation": "",
-    "comment": "",
+    "translation": "DODRIO BEEREN-SAMMELN REKORDE",
+    "comment": "[KI]",
     "byte_offset": 4312223,
     "byte_length": 29,
     "done": false
   },
   "0x041CD03": {
     "en": "Announcing BERRY-PICKING results!",
-    "translation": "",
-    "comment": "",
+    "translation": "Verbuendung der BEEREN-SAMMEL Ergebnisse!",
+    "comment": "[KI]",
     "byte_offset": 4312323,
     "byte_length": 34,
     "done": false
@@ -37161,24 +37161,24 @@
   },
   "0x041CE3B": {
     "en": " Are you ready to BERRY-CRUSH?\\pPlease pick a BERRY for use.{SHADOW}Please wait while each member\\pchooses a BERRY.",
-    "translation": "",
-    "comment": "",
+    "translation": "Bist du bereit zum BEEREN-ZERQUETSCHEN?\\pBitte waehle eine BEERE zum Verwenden.{SHADOW}Bitte warten waehrend jedes Mitglied\\peine BEERE waehlt.",
+    "comment": "[KI]",
     "byte_offset": 4312635,
     "byte_length": 108,
     "done": false
   },
   "0x041CEE9": {
     "en": "Your total amount of BERRY POWDER\\pis \\nÂ.{SHADOW} Recording your game results in the\\psave file.\\pPlease wait.",
-    "translation": "",
-    "comment": "",
+    "translation": "Deine gesamte BEERENPULVER Menge\\pist \\nÂ.{SHADOW} Speichere deine Spielergebnisse in\\pder Speicherdatei.\\pBitte warten.",
+    "comment": "[KI]",
     "byte_offset": 4312809,
     "byte_length": 102,
     "done": false
   },
   "0x041CF4F": {
     "en": " Want to play BERRY CRUSH again?",
-    "translation": "",
-    "comment": "",
+    "translation": "Moechtest du nochmal BEEREN-ZERQUETSCHEN spielen?",
+    "comment": "[KI]",
     "byte_offset": 4312911,
     "byte_length": 33,
     "done": false
@@ -37201,8 +37201,8 @@
   },
   "0x041CFD1": {
     "en": "   Time’s up.{SHADOW}ood BERRY POWDER could not be\\pmade…{SHADOW}   Communication standby…",
-    "translation": "",
-    "comment": "",
+    "translation": "Zeit abgelaufen.{SHADOW}utes BEERENPULVER konnte nicht\\phergestellt werden…{SHADOW}   Kommunikation bereit…",
+    "comment": "[KI]",
     "byte_offset": 4313041,
     "byte_length": 78,
     "done": false
@@ -37217,8 +37217,8 @@
   },
   "0x041D042": {
     "en": "  \\nÁ BERRY",
-    "translation": "",
-    "comment": "",
+    "translation": "\\nÁ BEERE",
+    "comment": "[KI]",
     "byte_offset": 4313154,
     "byte_length": 11,
     "done": false
@@ -37273,8 +37273,8 @@
   },
   "0x041D118": {
     "en": "BERRY CRUSH",
-    "translation": "",
-    "comment": "",
+    "translation": "BEEREN-ZERQUETSCHEN",
+    "comment": "[KI]",
     "byte_offset": 4313368,
     "byte_length": 12,
     "done": false
@@ -41681,8 +41681,8 @@
   },
   "0x044C672": {
     "en": "It meditates to heighten its inner energy\\pand to float in the air. It eats only one\\pberry each day.",
-    "translation": "",
-    "comment": "",
+    "translation": "Es meditiert um seine innere Energie\\pzu staerken und in der Luft zu schweben.\\pEs isst nur eine Beere pro Tag.",
+    "comment": "[KI]",
     "byte_offset": 4507250,
     "byte_length": 100,
     "done": false
@@ -44985,16 +44985,16 @@
   },
   "0x045915E": {
     "en": "  Berry Crush!\\pPlease choose the Leader.",
-    "translation": "",
-    "comment": "",
+    "translation": "Beeren-Zerquetschen!\\pBitte waehle den Anfuehrer.",
+    "comment": "[KI]",
     "byte_offset": 4559198,
     "byte_length": 41,
     "done": false
   },
   "0x0459187": {
     "en": " Dodrio Berry-Picking!\\pPlease choose the Leader.",
-    "translation": "",
-    "comment": "",
+    "translation": "Dodrio Beeren-Sammeln!\\pBitte waehle den Anfuehrer.",
+    "comment": "[KI]",
     "byte_offset": 4559239,
     "byte_length": 49,
     "done": false
@@ -45169,16 +45169,16 @@
   },
   "0x045940D": {
     "en": "   Berry Crush",
-    "translation": "",
-    "comment": "",
+    "translation": "Beeren-Zerquetschen",
+    "comment": "[KI]",
     "byte_offset": 4559885,
     "byte_length": 15,
     "done": false
   },
   "0x045941C": {
     "en": "Berry-Picking",
-    "translation": "",
-    "comment": "",
+    "translation": "Beeren-Sammeln",
+    "comment": "[KI]",
     "byte_offset": 4559900,
     "byte_length": 14,
     "done": false
@@ -51857,24 +51857,24 @@
   },
   "0x0488C70": {
     "en": "Obtained a \\nÂ BERRY!\\pDad has it at PETALBURG GYM.",
-    "translation": "",
-    "comment": "",
+    "translation": "Eine \\nÂ BEERE erhalten!\\pMein Vater hat sie in der ROSENPUTZ ARENA.",
+    "comment": "[KI]",
     "byte_offset": 4754544,
     "byte_length": 50,
     "done": false
   },
   "0x0488CA2": {
     "en": "The \\nÁ BERRY transformed into\\pone \\nÂ BERRY.",
-    "translation": "",
-    "comment": "",
+    "translation": "Die \\nÁ BEERE verwandelte sich\\pin eine \\nÂ BEERE.",
+    "comment": "[KI]",
     "byte_offset": 4754594,
     "byte_length": 44,
     "done": false
   },
   "0x0488CCE": {
     "en": "The \\nÁ BERRY has already been\\pobtained.",
-    "translation": "",
-    "comment": "",
+    "translation": "Die \\nÁ BEERE wurde bereits\\perhalten.",
+    "comment": "[KI]",
     "byte_offset": 4754638,
     "byte_length": 40,
     "done": false
@@ -64369,8 +64369,8 @@
   },
   "0x0780FB9": {
     "en": "The type and base\\ppower of this move\\pis determined by\\pthe user’s Berry.",
-    "translation": "",
-    "comment": "",
+    "translation": "Der Typ und die Basis-Staerke\\pdieses Angriffs haengt ab\\nvom der BEERE des Anwenders.",
+    "comment": "[KI]",
     "byte_offset": 7868345,
     "byte_length": 72,
     "done": false
@@ -65721,8 +65721,8 @@
   },
   "0x078D9CA": {
     "en": " Pecha Berry{HIGHLIGHT} Qualot Berry{HIGHLIGHT} Moomoo Milk",
-    "translation": "",
-    "comment": "",
+    "translation": "Pecha-Beere{HIGHLIGHT} Qualot-Beere{HIGHLIGHT} Moomoo-Milch",
+    "comment": "[KI]",
     "byte_offset": 7920074,
     "byte_length": 42,
     "done": false
@@ -70913,8 +70913,8 @@
   },
   "0x07C2E47": {
     "en": "I was taking inventory for the\\pberry shipments this morning, and{HIGHLIGHT}s usual, we have a surplus.{SHADOW}hy don’t you take a berry?",
-    "translation": "",
-    "comment": "",
+    "translation": "Ich habe heute Morgen die{pBeeren-Lieferungen inventarisiert, und wie{HIGHLIGHT}blich haben wir einen Ueberbestand.{SHADOW}arum nimmst du nicht eine Beere mit?",
+    "comment": "[KI]",
     "byte_offset": 8138311,
     "byte_length": 122,
     "done": false
@@ -81657,8 +81657,8 @@
   },
   "0x0876985": {
     "en": "           Berry Juice",
-    "translation": "",
-    "comment": "",
+    "translation": "Beeren-Saft",
+    "comment": "[KI]",
     "byte_offset": 8874373,
     "byte_length": 23,
     "done": false
@@ -82233,8 +82233,8 @@
   },
   "0x087763C": {
     "en": "            Enigma Berry",
-    "translation": "",
-    "comment": "",
+    "translation": "Raetsel-Beere",
+    "comment": "[KI]",
     "byte_offset": 8877628,
     "byte_length": 25,
     "done": false
@@ -82353,344 +82353,344 @@
   },
   "0x08778D9": {
     "en": "   Cheri Berry",
-    "translation": "",
-    "comment": "",
+    "translation": "Cheri-Beere",
+    "comment": "[KI]",
     "byte_offset": 8878297,
     "byte_length": 15,
     "done": false
   },
   "0x0877904": {
     "en": "    Chesto Berry",
-    "translation": "",
-    "comment": "",
+    "translation": "Chesto-Beere",
+    "comment": "[KI]",
     "byte_offset": 8878340,
     "byte_length": 17,
     "done": false
   },
   "0x0877930": {
     "en": "    Pecha Berry",
-    "translation": "",
-    "comment": "",
+    "translation": "Pecha-Beere",
+    "comment": "[KI]",
     "byte_offset": 8878384,
     "byte_length": 16,
     "done": false
   },
   "0x087795C": {
     "en": "    Rawst Berry",
-    "translation": "",
-    "comment": "",
+    "translation": "Rawst-Beere",
+    "comment": "[KI]",
     "byte_offset": 8878428,
     "byte_length": 16,
     "done": false
   },
   "0x0877988": {
     "en": "    Aspear Berry",
-    "translation": "",
-    "comment": "",
+    "translation": "Aspear-Beere",
+    "comment": "[KI]",
     "byte_offset": 8878472,
     "byte_length": 17,
     "done": false
   },
   "0x08779B4": {
     "en": "    Leppa Berry",
-    "translation": "",
-    "comment": "",
+    "translation": "Leppa-Beere",
+    "comment": "[KI]",
     "byte_offset": 8878516,
     "byte_length": 16,
     "done": false
   },
   "0x08779E0": {
     "en": "    Oran Berry",
-    "translation": "",
-    "comment": "",
+    "translation": "Oran-Beere",
+    "comment": "[KI]",
     "byte_offset": 8878560,
     "byte_length": 15,
     "done": false
   },
   "0x0877A0C": {
     "en": "    Persim Berry",
-    "translation": "",
-    "comment": "",
+    "translation": "Persim-Beere",
+    "comment": "[KI]",
     "byte_offset": 8878604,
     "byte_length": 17,
     "done": false
   },
   "0x0877A38": {
     "en": "    Lum Berry",
-    "translation": "",
-    "comment": "",
+    "translation": "Lum-Beere",
+    "comment": "[KI]",
     "byte_offset": 8878648,
     "byte_length": 14,
     "done": false
   },
   "0x0877A64": {
     "en": "    Sitrus Berry",
-    "translation": "",
-    "comment": "",
+    "translation": "Sitrus-Beere",
+    "comment": "[KI]",
     "byte_offset": 8878692,
     "byte_length": 17,
     "done": false
   },
   "0x0877A90": {
     "en": "    Figy Berry",
-    "translation": "",
-    "comment": "",
+    "translation": "Figy-Beere",
+    "comment": "[KI]",
     "byte_offset": 8878736,
     "byte_length": 15,
     "done": false
   },
   "0x0877AB6": {
     "en": "          Wiki Berry",
-    "translation": "",
-    "comment": "",
+    "translation": "Wiki-Beere",
+    "comment": "[KI]",
     "byte_offset": 8878774,
     "byte_length": 21,
     "done": false
   },
   "0x0877AE2": {
     "en": "          Mago Berry",
-    "translation": "",
-    "comment": "",
+    "translation": "Mago-Beere",
+    "comment": "[KI]",
     "byte_offset": 8878818,
     "byte_length": 21,
     "done": false
   },
   "0x0877B0D": {
     "en": "           Aguav Berry",
-    "translation": "",
-    "comment": "",
+    "translation": "Aguav-Beere",
+    "comment": "[KI]",
     "byte_offset": 8878861,
     "byte_length": 23,
     "done": false
   },
   "0x0877B38": {
     "en": "            Iapapa Berry",
-    "translation": "",
-    "comment": "",
+    "translation": "Iapapa-Beere",
+    "comment": "[KI]",
     "byte_offset": 8878904,
     "byte_length": 25,
     "done": false
   },
   "0x0877B66": {
     "en": "          Razz Berry",
-    "translation": "",
-    "comment": "",
+    "translation": "Razz-Beere",
+    "comment": "[KI]",
     "byte_offset": 8878950,
     "byte_length": 21,
     "done": false
   },
   "0x0877B92": {
     "en": "          Bluk Berry",
-    "translation": "",
-    "comment": "",
+    "translation": "Bluk-Beere",
+    "comment": "[KI]",
     "byte_offset": 8878994,
     "byte_length": 21,
     "done": false
   },
   "0x0877BBD": {
     "en": "           Nanab Berry",
-    "translation": "",
-    "comment": "",
+    "translation": "Nanab-Beere",
+    "comment": "[KI]",
     "byte_offset": 8879037,
     "byte_length": 23,
     "done": false
   },
   "0x0877BE8": {
     "en": "            Wepear Berry",
-    "translation": "",
-    "comment": "",
+    "translation": "Wepear-Beere",
+    "comment": "[KI]",
     "byte_offset": 8879080,
     "byte_length": 25,
     "done": false
   },
   "0x0877C15": {
     "en": "           Pinap Berry",
-    "translation": "",
-    "comment": "",
+    "translation": "Pinap-Beere",
+    "comment": "[KI]",
     "byte_offset": 8879125,
     "byte_length": 23,
     "done": false
   },
   "0x0877C41": {
     "en": "           Pomeg Berry",
-    "translation": "",
-    "comment": "",
+    "translation": "Pomeg-Beere",
+    "comment": "[KI]",
     "byte_offset": 8879169,
     "byte_length": 23,
     "done": false
   },
   "0x0877C78": {
     "en": "Kelpsy Berry",
-    "translation": "",
-    "comment": "",
+    "translation": "Kelpsy-Beere",
+    "comment": "[KI]",
     "byte_offset": 8879224,
     "byte_length": 13,
     "done": false
   },
   "0x0877CA4": {
     "en": "Qualot Berry",
-    "translation": "",
-    "comment": "",
+    "translation": "Qualot-Beere",
+    "comment": "[KI]",
     "byte_offset": 8879268,
     "byte_length": 13,
     "done": false
   },
   "0x0877CD0": {
     "en": "Hondew Berry",
-    "translation": "",
-    "comment": "",
+    "translation": "Hondew-Beere",
+    "comment": "[KI]",
     "byte_offset": 8879312,
     "byte_length": 13,
     "done": false
   },
   "0x0877CFC": {
     "en": "Grepa Berry",
-    "translation": "",
-    "comment": "",
+    "translation": "Grepa-Beere",
+    "comment": "[KI]",
     "byte_offset": 8879356,
     "byte_length": 12,
     "done": false
   },
   "0x0877D28": {
     "en": "Tamato Berry",
-    "translation": "",
-    "comment": "",
+    "translation": "Tamato-Beere",
+    "comment": "[KI]",
     "byte_offset": 8879400,
     "byte_length": 13,
     "done": false
   },
   "0x0877D54": {
     "en": "Cornn Berry",
-    "translation": "",
-    "comment": "",
+    "translation": "Cornn-Beere",
+    "comment": "[KI]",
     "byte_offset": 8879444,
     "byte_length": 12,
     "done": false
   },
   "0x0877D74": {
     "en": "            Magost Berry",
-    "translation": "",
-    "comment": "",
+    "translation": "Magost-Beere",
+    "comment": "[KI]",
     "byte_offset": 8879476,
     "byte_length": 25,
     "done": false
   },
   "0x0877DA0": {
     "en": "            Rabuta Berry",
-    "translation": "",
-    "comment": "",
+    "translation": "Rabuta-Beere",
+    "comment": "[KI]",
     "byte_offset": 8879520,
     "byte_length": 25,
     "done": false
   },
   "0x0877DCD": {
     "en": "           Nomel Berry",
-    "translation": "",
-    "comment": "",
+    "translation": "Nomel-Beere",
+    "comment": "[KI]",
     "byte_offset": 8879565,
     "byte_length": 23,
     "done": false
   },
   "0x0877DF8": {
     "en": "            Spelon Berry",
-    "translation": "",
-    "comment": "",
+    "translation": "Spelon-Beere",
+    "comment": "[KI]",
     "byte_offset": 8879608,
     "byte_length": 25,
     "done": false
   },
   "0x0877E24": {
     "en": "            Pamtre Berry",
-    "translation": "",
-    "comment": "",
+    "translation": "Pamtre-Beere",
+    "comment": "[KI]",
     "byte_offset": 8879652,
     "byte_length": 25,
     "done": false
   },
   "0x0877E50": {
     "en": "            Watmel Berry",
-    "translation": "",
-    "comment": "",
+    "translation": "Watmel-Beere",
+    "comment": "[KI]",
     "byte_offset": 8879696,
     "byte_length": 25,
     "done": false
   },
   "0x0877E7D": {
     "en": "           Durin Berry",
-    "translation": "",
-    "comment": "",
+    "translation": "Durin-Beere",
+    "comment": "[KI]",
     "byte_offset": 8879741,
     "byte_length": 23,
     "done": false
   },
   "0x0877EA9": {
     "en": "           Belue Berry",
-    "translation": "",
-    "comment": "",
+    "translation": "Belue-Beere",
+    "comment": "[KI]",
     "byte_offset": 8879785,
     "byte_length": 23,
     "done": false
   },
   "0x0877ED4": {
     "en": "            Liechi Berry",
-    "translation": "",
-    "comment": "",
+    "translation": "Liechi-Beere",
+    "comment": "[KI]",
     "byte_offset": 8879828,
     "byte_length": 25,
     "done": false
   },
   "0x0877F00": {
     "en": "            Ganlon Berry",
-    "translation": "",
-    "comment": "",
+    "translation": "Ganlon-Beere",
+    "comment": "[KI]",
     "byte_offset": 8879872,
     "byte_length": 25,
     "done": false
   },
   "0x0877F2D": {
     "en": "           Salac Berry",
-    "translation": "",
-    "comment": "",
+    "translation": "Salac-Beere",
+    "comment": "[KI]",
     "byte_offset": 8879917,
     "byte_length": 23,
     "done": false
   },
   "0x0877F58": {
     "en": "            Petaya Berry",
-    "translation": "",
-    "comment": "",
+    "translation": "Petaya-Beere",
+    "comment": "[KI]",
     "byte_offset": 8879960,
     "byte_length": 25,
     "done": false
   },
   "0x0877F84": {
     "en": "            Apicot Berry",
-    "translation": "",
-    "comment": "",
+    "translation": "Apicot-Beere",
+    "comment": "[KI]",
     "byte_offset": 8880004,
     "byte_length": 25,
     "done": false
   },
   "0x0877FB0": {
     "en": "            Lansat Berry",
-    "translation": "",
-    "comment": "",
+    "translation": "Lansat-Beere",
+    "comment": "[KI]",
     "byte_offset": 8880048,
     "byte_length": 25,
     "done": false
   },
   "0x0877FDD": {
     "en": "           Starf Berry",
-    "translation": "",
-    "comment": "",
+    "translation": "Starf-Beere",
+    "comment": "[KI]",
     "byte_offset": 8880093,
     "byte_length": 23,
     "done": false
   },
   "0x0878015": {
     "en": "nigma Berry",
-    "translation": "",
-    "comment": "",
+    "translation": "Raetsel-Beere",
+    "comment": "[KI]",
     "byte_offset": 8880149,
     "byte_length": 12,
     "done": false
@@ -83713,8 +83713,8 @@
   },
   "0x087A0B1": {
     "en": "           Berry Pouch",
-    "translation": "",
-    "comment": "",
+    "translation": "Beeren-Tasche",
+    "comment": "[KI]",
     "byte_offset": 8888497,
     "byte_length": 23,
     "done": false
@@ -84537,192 +84537,192 @@
   },
   "0x087BE9A": {
     "en": "          Occa Berry",
-    "translation": "",
-    "comment": "",
+    "translation": "Occa-Beere",
+    "comment": "[KI]",
     "byte_offset": 8896154,
     "byte_length": 21,
     "done": false
   },
   "0x087BEC4": {
     "en": "            Passho Berry",
-    "translation": "",
-    "comment": "",
+    "translation": "Passho-Beere",
+    "comment": "[KI]",
     "byte_offset": 8896196,
     "byte_length": 25,
     "done": false
   },
   "0x087BEF1": {
     "en": "           Wacan Berry",
-    "translation": "",
-    "comment": "",
+    "translation": "Wacan-Beere",
+    "comment": "[KI]",
     "byte_offset": 8896241,
     "byte_length": 23,
     "done": false
   },
   "0x087BF1D": {
     "en": "           Rindo Berry",
-    "translation": "",
-    "comment": "",
+    "translation": "Rindo-Beere",
+    "comment": "[KI]",
     "byte_offset": 8896285,
     "byte_length": 23,
     "done": false
   },
   "0x087BF49": {
     "en": "           Yache Berry",
-    "translation": "",
-    "comment": "",
+    "translation": "Yache-Beere",
+    "comment": "[KI]",
     "byte_offset": 8896329,
     "byte_length": 23,
     "done": false
   },
   "0x087BF74": {
     "en": "            Chople Berry",
-    "translation": "",
-    "comment": "",
+    "translation": "Chople-Beere",
+    "comment": "[KI]",
     "byte_offset": 8896372,
     "byte_length": 25,
     "done": false
   },
   "0x087BFA1": {
     "en": "           Kebia Berry",
-    "translation": "",
-    "comment": "",
+    "translation": "Kebia-Beere",
+    "comment": "[KI]",
     "byte_offset": 8896417,
     "byte_length": 23,
     "done": false
   },
   "0x087BFCD": {
     "en": "           Shuca Berry",
-    "translation": "",
-    "comment": "",
+    "translation": "Shuca-Beere",
+    "comment": "[KI]",
     "byte_offset": 8896461,
     "byte_length": 23,
     "done": false
   },
   "0x087BFFA": {
     "en": "          Coba Berry",
-    "translation": "",
-    "comment": "",
+    "translation": "Coba-Beere",
+    "comment": "[KI]",
     "byte_offset": 8896506,
     "byte_length": 21,
     "done": false
   },
   "0x087C024": {
     "en": "            Payapa Berry",
-    "translation": "",
-    "comment": "",
+    "translation": "Payapa-Beere",
+    "comment": "[KI]",
     "byte_offset": 8896548,
     "byte_length": 25,
     "done": false
   },
   "0x087C051": {
     "en": "           Tanga Berry",
-    "translation": "",
-    "comment": "",
+    "translation": "Tanga-Beere",
+    "comment": "[KI]",
     "byte_offset": 8896593,
     "byte_length": 23,
     "done": false
   },
   "0x087C07C": {
     "en": "            Charti Berry",
-    "translation": "",
-    "comment": "",
+    "translation": "Charti-Beere",
+    "comment": "[KI]",
     "byte_offset": 8896636,
     "byte_length": 25,
     "done": false
   },
   "0x087C0A9": {
     "en": "           Kasib Berry",
-    "translation": "",
-    "comment": "",
+    "translation": "Kasib-Beere",
+    "comment": "[KI]",
     "byte_offset": 8896681,
     "byte_length": 23,
     "done": false
   },
   "0x087C0D5": {
     "en": "           Haban Berry",
-    "translation": "",
-    "comment": "",
+    "translation": "Haban-Beere",
+    "comment": "[KI]",
     "byte_offset": 8896725,
     "byte_length": 23,
     "done": false
   },
   "0x087C100": {
     "en": "            Colbur Berry",
-    "translation": "",
-    "comment": "",
+    "translation": "Colbur-Beere",
+    "comment": "[KI]",
     "byte_offset": 8896768,
     "byte_length": 25,
     "done": false
   },
   "0x087C12C": {
     "en": "            Babiri Berry",
-    "translation": "",
-    "comment": "",
+    "translation": "Babiri-Beere",
+    "comment": "[KI]",
     "byte_offset": 8896812,
     "byte_length": 25,
     "done": false
   },
   "0x087C158": {
     "en": "            Chilan Berry",
-    "translation": "",
-    "comment": "",
+    "translation": "Chilan-Beere",
+    "comment": "[KI]",
     "byte_offset": 8896856,
     "byte_length": 25,
     "done": false
   },
   "0x087C185": {
     "en": "           Micle Berry",
-    "translation": "",
-    "comment": "",
+    "translation": "Micle-Beere",
+    "comment": "[KI]",
     "byte_offset": 8896901,
     "byte_length": 23,
     "done": false
   },
   "0x087C1B0": {
     "en": "            Custap Berry",
-    "translation": "",
-    "comment": "",
+    "translation": "Custap-Beere",
+    "comment": "[KI]",
     "byte_offset": 8896944,
     "byte_length": 25,
     "done": false
   },
   "0x087C1DC": {
     "en": "            Jaboca Berry",
-    "translation": "",
-    "comment": "",
+    "translation": "Jaboca-Beere",
+    "comment": "[KI]",
     "byte_offset": 8896988,
     "byte_length": 25,
     "done": false
   },
   "0x087C209": {
     "en": "           Rowap Berry",
-    "translation": "",
-    "comment": "",
+    "translation": "Rowap-Beere",
+    "comment": "[KI]",
     "byte_offset": 8897033,
     "byte_length": 23,
     "done": false
   },
   "0x087C234": {
     "en": "            Roseli Berry",
-    "translation": "",
-    "comment": "",
+    "translation": "Roseli-Beere",
+    "comment": "[KI]",
     "byte_offset": 8897076,
     "byte_length": 25,
     "done": false
   },
   "0x087C264": {
     "en": "        Kee Berry",
-    "translation": "",
-    "comment": "",
+    "translation": "Kee-Beere",
+    "comment": "[KI]",
     "byte_offset": 8897124,
     "byte_length": 18,
     "done": false
   },
   "0x087C28C": {
     "en": "            Marang Berry",
-    "translation": "",
-    "comment": "",
+    "translation": "Marang-Beere",
+    "comment": "[KI]",
     "byte_offset": 8897164,
     "byte_length": 25,
     "done": false
@@ -85953,16 +85953,16 @@
   },
   "0x087DD12": {
     "en": "wËwberry S",
-    "translation": "",
-    "comment": "",
+    "translation": "wËwbeere S",
+    "comment": "[KI]",
     "byte_offset": 8903954,
     "byte_length": 11,
     "done": false
   },
   "0x087DD31": {
     "en": "           Berry Sweet",
-    "translation": "",
-    "comment": "",
+    "translation": "Beeren-Suessigkeit",
+    "comment": "[KI]",
     "byte_offset": 8903985,
     "byte_length": 23,
     "done": false
@@ -90561,16 +90561,16 @@
   },
   "0x092179B": {
     "en": " The user bites\\pthe foe, eating\\pits berry if it is\\pholding one.",
-    "translation": "",
-    "comment": "",
+    "translation": "Der Nutzer beisst\\pden Gegner und isst\\pseine Beere, falls\\pvorhanden.",
+    "comment": "[KI]",
     "byte_offset": 9574299,
     "byte_length": 64,
     "done": false
   },
   "0x09217DB": {
     "en": " The user pecks\\pthe foe, plucking\\pits berry if it is\\pholding one.",
-    "translation": "",
-    "comment": "",
+    "translation": "Der Nutzer pickt\\pden Gegner und klaut\\pseine Beere, falls\\pvorhanden.",
+    "comment": "[KI]",
     "byte_offset": 9574363,
     "byte_length": 66,
     "done": false
@@ -90689,8 +90689,8 @@
   },
   "0x0921BE6": {
     "en": " The user burns\\pthe foe completely,\\prendering a held\\pBerry useless.",
-    "translation": "",
-    "comment": "",
+    "translation": "Der Nutzer verbrennt\\pden Gegner komplett\\pund macht eine gehaltene\\pBeere unbrauchbar.",
+    "comment": "[KI]",
     "byte_offset": 9575398,
     "byte_length": 68,
     "done": false
@@ -95185,8 +95185,8 @@
   },
   "0x0A360E4": {
     "en": "Doubles Berry effects.",
-    "translation": "",
-    "comment": "",
+    "translation": "Verdoppelt Beeren-Effekte.",
+    "comment": "[KI]",
     "byte_offset": 10707172,
     "byte_length": 23,
     "done": false
@@ -98873,16 +98873,16 @@
   },
   "0x0A398C0": {
     "en": "The user bites\\pthe foe, eating\\pits berry if it is\\pholding one.",
-    "translation": "",
-    "comment": "",
+    "translation": "Der Nutzer beisst\\pden Gegner und isst\\pseine Beere, falls\\pvorhanden.",
+    "comment": "[KI]",
     "byte_offset": 10721472,
     "byte_length": 63,
     "done": false
   },
   "0x0A398FF": {
     "en": "The user pecks\\pthe foe, plucking\\pits berry if it is\\pholding one.",
-    "translation": "",
-    "comment": "",
+    "translation": "Der Nutzer pickt\\pden Gegner und klaut\\pseine Beere, falls\\pvorhanden.",
+    "comment": "[KI]",
     "byte_offset": 10721535,
     "byte_length": 65,
     "done": false
@@ -99065,8 +99065,8 @@
   },
   "0x0A39F3A": {
     "en": "The user burns\\pthe foe completely,\\prendering a held Gem\\por Berry useless.",
-    "translation": "",
-    "comment": "",
+    "translation": "Der Nutzer versengt\\pden Gegner voellig,\\pwodurch ein\\pgetragenes Item\\pnutzlos wird.",
+    "comment": "[KI]",
     "byte_offset": 10723130,
     "byte_length": 74,
     "done": false
@@ -99321,8 +99321,8 @@
   },
   "0x0A3A87D": {
     "en": "The type and base\\ppower of this move\\pis determined by\\pthe user’s Berry.",
-    "translation": "",
-    "comment": "",
+    "translation": "Typ und Basis-Kraft\\pdieses Zuges haengen\\nvom getragenen\\pObst des Nutzers ab.",
+    "comment": "[KI]",
     "byte_offset": 10725501,
     "byte_length": 72,
     "done": false
@@ -100401,8 +100401,8 @@
   },
   "0x0A3D652": {
     "en": "The user lets out a\\pdamaging belch at\\pthe target. The user\\pmust eat a held\\pBerry to use this.",
-    "translation": "",
-    "comment": "",
+    "translation": "Der Nutzer stoesst einen\\pschaedlichen Ruelps auf\\pdas Ziel aus. Der Nutzer\\pmuss ein Obst tragen,\\pum dies zu nutzen.",
+    "comment": "[KI]",
     "byte_offset": 10737234,
     "byte_length": 94,
     "done": false
@@ -100721,8 +100721,8 @@
   },
   "0x0A3E338": {
     "en": "The user consumes\\pits held Berry,\\pthen raises its\\pDefense sharply.",
-    "translation": "",
-    "comment": "",
+    "translation": "Der Nutzer isst sein\\pgetragenes Obst und\\nerhoet seine\\pVerteidigung stark.",
+    "comment": "[KI]",
     "byte_offset": 10740536,
     "byte_length": 67,
     "done": false
@@ -100761,8 +100761,8 @@
   },
   "0x0A3E4A6": {
     "en": "All Pokémon on the\\pfield have teatime.\\pEach Pokémon eats\\pits held Berry.",
-    "translation": "",
-    "comment": "",
+    "translation": "Alle Pokémon auf dem\\pFeld machen Teezeit.\\pJedes Pokémon isst\\psein getragenes Obst.",
+    "comment": "[KI]",
     "byte_offset": 10740902,
     "byte_length": 73,
     "done": false
@@ -126625,16 +126625,16 @@
   },
   "0x0EB8334": {
     "en": "A strawberry-shaped sweet.\\pWhen used on a Milcery, it will\\pspin around happily.",
-    "translation": "",
-    "comment": "",
+    "translation": "Ein erdbeerfoeremiges\\pSueßes. Bei Nutzung auf\\peinem Milcery tanzt es\\pfroehlich herum.",
+    "comment": "[KI]",
     "byte_offset": 15434548,
     "byte_length": 80,
     "done": false
   },
   "0x0EB8384": {
     "en": "A berry-shaped sweet.\\pWhen used on a Milcery, it will\\pspin around happily.",
-    "translation": "",
-    "comment": "",
+    "translation": "Ein obstfoeremiges\\pSueßes. Bei Nutzung auf\\peinem Milcery tanzt es\\pfroehlich herum.",
+    "comment": "[KI]",
     "byte_offset": 15434628,
     "byte_length": 75,
     "done": false
@@ -127041,8 +127041,8 @@
   },
   "0x0EB91A9": {
     "en": "Maranga Berry",
-    "translation": "",
-    "comment": "",
+    "translation": "Maronagbeere",
+    "comment": "[KI]",
     "byte_offset": 15438249,
     "byte_length": 14,
     "done": false
@@ -127153,8 +127153,8 @@
   },
   "0x0EB9272": {
     "en": "Strawberry Sweet",
-    "translation": "",
-    "comment": "",
+    "translation": "Erdbeersueßes",
+    "comment": "[KI]",
     "byte_offset": 15438450,
     "byte_length": 17,
     "done": false
@@ -142913,8 +142913,8 @@
   },
   "0x166602A": {
     "en": "This Pokémon has strong teeth and\\pcan chew through the toughest of\\pberry shells.",
-    "translation": "",
-    "comment": "",
+    "translation": "Dieses Pokémon hat staerke Zaehne\\pund kann die haertesten\\pObutsschaalen durchkauen.",
+    "comment": "[KI]",
     "byte_offset": 23486506,
     "byte_length": 81,
     "done": false
@@ -143305,8 +143305,8 @@
   },
   "0x1667474": {
     "en": "It evolved from a Milcery that held\\ponto a Strawberry Sweet. Its flavor\\pdepends on how it was mixed.",
-    "translation": "",
-    "comment": "",
+    "translation": "Es entwickelte sich aus einem\\pMilcery, das ein Erdbeersueßes\\phielt. Sein Geschmack haengt\\nvon der Mischung ab.",
+    "comment": "[KI]",
     "byte_offset": 23491700,
     "byte_length": 101,
     "done": false
@@ -144041,8 +144041,8 @@
   },
   "0x1669B75": {
     "en": "It evolved from a Milcery that held\\ponto a Berry Sweet. The flavor of its\\pcream depends on how it was mixed.",
-    "translation": "",
-    "comment": "",
+    "translation": "Es entwickelte sich aus einem\\pMilcery, das ein Obstsueßes\\phielt. Der Geschmack seiner\\pCreme haengt von der Mischung ab.",
+    "comment": "[KI]",
     "byte_offset": 23501685,
     "byte_length": 109,
     "done": false
@@ -171481,8 +171481,8 @@
   },
   "0x1EDE8DD": {
     "en": "I was taking inventory for the\\pBerry shipments this morning, and{HIGHLIGHT}s usual, we have a surplus.{SHADOW}hy don’t you take a Berry?",
-    "translation": "",
-    "comment": "",
+    "translation": "Ich machte heute Morgen\\pInventur fuer die Obst-\\pLieferungen, und wie\\ngewoehnlich haben wir\\pUeberschuss.{SHADOW}illst du\\pein Obst haben?",
+    "comment": "[KI]",
     "byte_offset": 32368861,
     "byte_length": 122,
     "done": false
@@ -173609,8 +173609,8 @@
   },
   "0x1EE811F": {
     "en": "Oh! You have that type!\\pI’m inspired!{SHADOW}hank you! As a token of my\\pgratitude, would you like a Berry?",
-    "translation": "",
-    "comment": "",
+    "translation": "Oh! Du hast diesen Typ!\\pIch bin inspiriert!{SHADOW}anke dir! Als\\pZeichen meiner Dankbarkeit,\\nmoechtest du ein Obst?",
+    "comment": "[KI]",
     "byte_offset": 32407839,
     "byte_length": 101,
     "done": false
@@ -173649,48 +173649,48 @@
   },
   "0x1EE8259": {
     "en": "Cheri Berry",
-    "translation": "",
-    "comment": "",
+    "translation": "Cheri-Beere",
+    "comment": "[KI]",
     "byte_offset": 32408153,
     "byte_length": 12,
     "done": false
   },
   "0x1EE8265": {
     "en": "Chesto Berry",
-    "translation": "",
-    "comment": "",
+    "translation": "Chesto-Beere",
+    "comment": "[KI]",
     "byte_offset": 32408165,
     "byte_length": 13,
     "done": false
   },
   "0x1EE8272": {
     "en": "Pecha Berry",
-    "translation": "",
-    "comment": "",
+    "translation": "Pecha-Beere",
+    "comment": "[KI]",
     "byte_offset": 32408178,
     "byte_length": 12,
     "done": false
   },
   "0x1EE827E": {
     "en": "Rawst Berry",
-    "translation": "",
-    "comment": "",
+    "translation": "Rawst-Beere",
+    "comment": "[KI]",
     "byte_offset": 32408190,
     "byte_length": 12,
     "done": false
   },
   "0x1EE828A": {
     "en": "Aspear Berry",
-    "translation": "",
-    "comment": "",
+    "translation": "Aspear-Beere",
+    "comment": "[KI]",
     "byte_offset": 32408202,
     "byte_length": 13,
     "done": false
   },
   "0x1EE8297": {
     "en": "Leppa Berry",
-    "translation": "",
-    "comment": "",
+    "translation": "Leppa-Beere",
+    "comment": "[KI]",
     "byte_offset": 32408215,
     "byte_length": 12,
     "done": false
@@ -174209,8 +174209,8 @@
   },
   "0x1EEA8A9": {
     "en": "Bring 1 Pecha Berry, 1 Qualot\\pBerry, and 1 Fresh Water to help\\pout with a birthday celebration.",
-    "translation": "",
-    "comment": "",
+    "translation": "Bringe 1 Pfirsich-Beere, 1 Qualot-\\pBeere und 1 Frischwasser zur\\pHilfe einer Geburtstagsfeier.",
+    "comment": "[KI]",
     "byte_offset": 32417961,
     "byte_length": 96,
     "done": false
@@ -174321,8 +174321,8 @@
   },
   "0x1EEAEE3": {
     "en": " Pecha Berry{HIGHLIGHT} Qualot Berry{HIGHLIGHT} Fresh Water",
-    "translation": "",
-    "comment": "",
+    "translation": "Pfirsich-Beere{HIGHLIGHT} Qualot-Beere{HIGHLIGHT} Frischwasser",
+    "comment": "[KI]",
     "byte_offset": 32419555,
     "byte_length": 42,
     "done": false
@@ -180177,8 +180177,8 @@
   },
   "0x1EFB168": {
     "en": "Choose Berry",
-    "translation": "",
-    "comment": "",
+    "translation": "Beere waehlen",
+    "comment": "[KI]",
     "byte_offset": 32485736,
     "byte_length": 13,
     "done": false
@@ -195249,8 +195249,8 @@
   },
   "0x1F2C45F": {
     "en": "I’m sorry, but I can’t blend the\\p\\nÁ.{SHADOW}lease choose a different Berry.",
-    "translation": "",
-    "comment": "",
+    "translation": "Entschuldigung, ich kann die\\p\\nBeere nicht verarbeiten.{SHADOW}Bitte waehle eine andere Beere.",
+    "comment": "[KI]",
     "byte_offset": 32687199,
     "byte_length": 70,
     "done": false
@@ -195305,8 +195305,8 @@
   },
   "0x1F2C5A6": {
     "en": " happily drank the\\pBerry blend.",
-    "translation": "",
-    "comment": "",
+    "translation": "trank gluecklich die\\pBeeren-Mischung.",
+    "comment": "[KI]",
     "byte_offset": 32687526,
     "byte_length": 32,
     "done": false
@@ -195345,8 +195345,8 @@
   },
   "0x1F2C693": {
     "en": "I’m so sorry!{SHADOW}he Berry blender is currently\\pbroken.{SHADOW}lease, come again!",
-    "translation": "",
-    "comment": "",
+    "translation": "Es tut mir sehr leid!{SHADOW}Der Beerenmischer ist derzeit\\pkaputt.{SHADOW}Bitte komm spaeter wieder!",
+    "comment": "[KI]",
     "byte_offset": 32687763,
     "byte_length": 73,
     "done": false
@@ -214825,8 +214825,8 @@
   },
   "0x1F68321": {
     "en": "Feed which Berry to \\nÂ?",
-    "translation": "",
-    "comment": "",
+    "translation": "Fuettere welche Beere an \\n?",
+    "comment": "[KI]",
     "byte_offset": 32932641,
     "byte_length": 24,
     "done": false
@@ -215065,16 +215065,16 @@
   },
   "0x1F68D0D": {
     "en": "In the Safari Game, Berries can be\\pused to aid you in your capture.{SHADOW}ifferent Berries have different\\peffects, and at most three Berries{HIGHLIGHT}an be fed to a Pokémon a time.{SHADOW}f a Pokémon has already eaten\\pthree Berries, any new Berries will{HIGHLIGHT}eplace the effects of the oldest{HIGHLIGHT}sed Berry.{SHADOW}hich Berry would you like to know\\pabout?",
-    "translation": "",
-    "comment": "",
+    "translation": "Im Safari-Spiel koennen Beeren\\pdir beim Fangen helfen.{SHADOW}Unterschiedliche Beeren haben\\pverschiedene Effekte, und maximal\\pdr ei Beeren{HIGHLIGHT}koennen einer Zeit\\pan ein Pokémon gegeben werden.{SHADOW}Falls ein Pokémon bereits drei\\pBeeren gegessen hat, ersetzen neue\\pBeeren{HIGHLIGHT}die Effekte der aeltesten{HIGHLIGHT}verwendeten Beere.{SHADOW}Welche Beere moechtest du kennen\\plernen?",
+    "comment": "[KI]",
     "byte_offset": 32935181,
     "byte_length": 323,
     "done": false
   },
   "0x1F68E50": {
     "en": "Which Berry would you like to know\\pabout?",
-    "translation": "",
-    "comment": "",
+    "translation": "Welche Beere moechtest du kennen\\plernen?",
+    "comment": "[KI]",
     "byte_offset": 32935504,
     "byte_length": 42,
     "done": false
@@ -215105,16 +215105,16 @@
   },
   "0x1F6905A": {
     "en": " is fed to a wild\\pPokémon, it will be confined to a{HIGHLIGHT}maller movement area.{SHADOW}nly a single Weaper Berry can be\\pfed to a Pokémon.",
-    "translation": "",
-    "comment": "",
+    "translation": "wird an ein wildes\\pPokémon gegeben, wird es sich in\\peinem{HIGHLIGHT}kleineren Bewegungsbereich\\pbewegen.{SHADOW}Nur eine einzelne Perlbeere kann\\pan ein Pokémon gegeben werden.",
+    "comment": "[KI]",
     "byte_offset": 32936026,
     "byte_length": 127,
     "done": false
   },
   "0x1F690EF": {
     "en": " is fed to a wild\\pPokémon, it will be more likely to{HIGHLIGHT}old an item when captured.{SHADOW}nly a single Pinap Berry can be\\pfed to a Pokémon.",
-    "translation": "",
-    "comment": "",
+    "translation": "wird an ein wildes\\pPokémon gegeben, wird es eher ein\\pItem{HIGHLIGHT}halten wenn gefangen.{SHADOW}Nur eine einzelne Ananas-Beere\\pkan an ein Pokémon gegeben werden.",
+    "comment": "[KI]",
     "byte_offset": 32936175,
     "byte_length": 132,
     "done": false
@@ -215137,40 +215137,40 @@
   },
   "0x1F6918C": {
     "en": "Razz Berry",
-    "translation": "",
-    "comment": "",
+    "translation": "Himbeer-Beere",
+    "comment": "[KI]",
     "byte_offset": 32936332,
     "byte_length": 11,
     "done": false
   },
   "0x1F69197": {
     "en": "Nanab Berry",
-    "translation": "",
-    "comment": "",
+    "translation": "Nanab-Beere",
+    "comment": "[KI]",
     "byte_offset": 32936343,
     "byte_length": 12,
     "done": false
   },
   "0x1F691A3": {
     "en": "Bluk Berry",
-    "translation": "",
-    "comment": "",
+    "translation": "Bluk-Beere",
+    "comment": "[KI]",
     "byte_offset": 32936355,
     "byte_length": 11,
     "done": false
   },
   "0x1F691AE": {
     "en": "Wepear Berry",
-    "translation": "",
-    "comment": "",
+    "translation": "Perlbeere",
+    "comment": "[KI]",
     "byte_offset": 32936366,
     "byte_length": 13,
     "done": false
   },
   "0x1F691BB": {
     "en": "Pinap Berry",
-    "translation": "",
-    "comment": "",
+    "translation": "Ananas-Beere",
+    "comment": "[KI]",
     "byte_offset": 32936379,
     "byte_length": 12,
     "done": false
@@ -215329,16 +215329,16 @@
   },
   "0x1F69BBD": {
     "en": "Which Berry should I tell you\\pabout?",
-    "translation": "",
-    "comment": "",
+    "translation": "Ueber welche Beere soll ich dir\\permaehlen?",
+    "comment": "[KI]",
     "byte_offset": 32938941,
     "byte_length": 37,
     "done": false
   },
   "0x1F69BE2": {
     "en": "That’s not a Berry!{SHADOW}atural Gift can only be used with\\pBerries!",
-    "translation": "",
-    "comment": "",
+    "translation": "Das ist keine Beere!{SHADOW}Naturgewalt kann nur mit Beeren\\pbenutzt werden!",
+    "comment": "[KI]",
     "byte_offset": 32938978,
     "byte_length": 64,
     "done": false
@@ -223425,8 +223425,8 @@
   },
   "0x1F82AB3": {
     "en": "Okay, let’s see what you got…{SHADOW}ow!{SHADOW}here did you find this mint\\pcondition barbecue chip shaped{HIGHLIGHT}ike a Ditto?{SHADOW}r that limited edition Nanab\\pBerry peel - that’s vintage!{SHADOW}old on, I’ll trade you for ’em!",
-    "translation": "",
-    "comment": "",
+    "translation": "Okay, lass mich schauen…{SHADOW}Wow!{SHADOW}Wo hast du diesen makellosen\\pGrillchip in Ditto-Form\\pgefunden?{SHADOW}Und diese limitierte Nanab-Beeren\\pschaele - das ist Vintage!{SHADOW}Warte, ich tausche mit dir dafuer!",
+    "comment": "[KI]",
     "byte_offset": 33041075,
     "byte_length": 201,
     "done": false
@@ -228705,8 +228705,8 @@
   },
   "0x1F9406B": {
     "en": "The ethos of battle and some Sitrus\\pBerry scented shampoos are{HIGHLIGHT}ssentially the same thing.{SHADOW}ifference is, one sounds sweeter!",
-    "translation": "",
-    "comment": "",
+    "translation": "Die Essenz von Kampf und einige\\pSitrus-Beeren riechende Shampoos\\psind{HIGHLIGHT}im Grunde dasselbe.{SHADOW}Der Unterschied ist, eines klingt\\psuesser!",
+    "comment": "[KI]",
     "byte_offset": 33112171,
     "byte_length": 126,
     "done": false
