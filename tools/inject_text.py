@@ -28,6 +28,7 @@ from pathlib import Path
 import sys
 sys.path.insert(0, str(Path(__file__).parent))
 from extract_text import encode_gba_string
+from stats import update_readme_progress
 
 
 def inject(source_rom: str, lang_json: str, output_rom: str, dry_run: bool = False):
@@ -121,9 +122,19 @@ def main():
     parser.add_argument("--output", "-o", default="output/unbound_translated.gba")
     parser.add_argument("--dry-run", action="store_true",
                         help="Simulate injection without writing (shows length errors)")
+    parser.add_argument("--no-update-readme", dest="update_readme", action="store_false",
+                        help="Do not update README progress badge")
+    parser.set_defaults(update_readme=True)
     args = parser.parse_args()
 
     inject(args.rom, args.json, args.output, dry_run=args.dry_run)
+
+    if args.update_readme and not args.dry_run:
+        readme_path = Path(__file__).parent.parent / "README.md"
+        if update_readme_progress(readme_path, args.json, lang_code=Path(args.json).parent.name):
+            print("README progress badge aktualisiert.")
+        else:
+            print("README progress badge nicht aktualisiert (README nicht gefunden oder Zeile fehlt).")
 
 
 if __name__ == "__main__":

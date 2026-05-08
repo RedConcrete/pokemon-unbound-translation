@@ -1,383 +1,139 @@
 # Pokémon Unbound – Translation Toolkit
 
-Multi-language translation pipeline für Pokémon Unbound (GBA ROM-Hack).  
-Workflow: ROM → Strings extrahieren → Übersetzen (Browser-Editor + KI-Hilfe) → Zurückinjizieren.
+Multi-language translation pipeline für Pokémon Unbound (GBA ROM-Hack).
 
 ![Python](https://img.shields.io/badge/Python-3.9%2B-blue)
-![Fortschritt DE](https://img.shields.io/badge/Deutsch-41%25-yellow)
+![Fortschritt DE](https://img.shields.io/badge/Deutsch-0%25-red)
 ![Lizenz](https://img.shields.io/badge/Lizenz-MIT-green)
 
----
+## Quick Start
 
-## Voraussetzungen
-
-- **Python 3.9+** – [python.org](https://www.python.org/downloads/)
-- Ein gepatchtes **Pokémon Unbound .gba** (FireRed v1.0 + UPS-Patch via [Flips](https://github.com/Alcaro/Flips))
-- Einen modernen Browser (für den Editor – kein Server nötig)
-- Kein externes Tool, keine Libraries – alles reines Python + HTML
-- Optional für KI-Übersetzung: `pip install anthropic` + Anthropic API Key
-
-> **Plattformhinweis:** Unter Windows lautet der Python-Befehl `py`, unter Linux/macOS `python3`.  
-> Alle Beispiele unten zeigen beide Varianten.
-
----
-
-## Schnellstart
-
-### 1. Text aus ROM extrahieren
-
+### 1. Text extrahieren
 ```powershell
-# Windows
 py tools/extract_text.py "Pokemon Unbound (v2.1.1.1).gba" --output translations/en_source.json
-
-# Linux / macOS
-python3 tools/extract_text.py "Pokemon Unbound (v2.1.1.1).gba" --output translations/en_source.json
 ```
-
-Dauert ca. 30–60 Sekunden. Fortschrittsbalken wird angezeigt.  
-Ergebnis: `translations/en_source.json` – alle lesbaren Strings mit Offset + Länge.
-
-> Nur einmal nötig, außer bei einer neuen Unbound-Version (siehe unten).
-
----
+Erzeugt `en_source.json` mit allen Strings aus der ROM.
 
 ### 2. Sprachdatei erstellen
-
 ```powershell
-# Windows
 py tools/create_language.py translations/en_source.json translations/de/de.json
-
-# Linux / macOS
-python3 tools/create_language.py translations/en_source.json translations/de/de.json
 ```
 
-Für weitere Sprachen denselben Befehl mit anderem Pfad wiederholen (`fr/fr.json`, `es/es.json`, …).
+### 3. Im Browser übersetzen
+- `tools/editor.html` öffnen
+- Datei laden: `translations/de/de.json`
+- Englisch links lesen → Deutsch rechts eingeben
+- Speichern → zurück nach `translations/de/de.json` kopieren
 
-Bestehende Übersetzungen werden beim erneuten Ausführen **nicht überschrieben** – bereits fertige Einträge bleiben erhalten.
+### 4. ROM bauen
+```powershell
+py tools/inject_text.py "Pokemon Unbound (v2.1.1.1).gba" translations/de/de.json --output output/unbound_de.gba
+```
+Der Progress-Badge wird automatisch aktualisiert!
 
----
-
-### 3. Übersetzen im Browser-Editor
-
-`tools/editor.html` direkt im Browser öffnen (Doppelklick reicht):
-
-- **📂 JSON laden** → deine `de.json` wählen
-- Englischen Text links lesen, Übersetzung rechts eingeben
-- **✓ Fertig** klicken wenn ein Eintrag abgeschlossen ist
-- Suchfeld + Filter nutzen um fokussiert zu arbeiten:
-  - **Nur offen** – noch nicht übersetzte Einträge
-  - **🤖 KI – zu prüfen** – KI-übersetzte Einträge, die manuell geprüft werden müssen
-- **💾 JSON speichern** – lädt die aktualisierte Datei herunter
-- Die heruntergeladene Datei nach `translations/de/de.json` kopieren (alte ersetzen)
-
-> Tipp: Arbeite in Blöcken von 50–100 Strings. Speichere regelmäßig.  
-> Der Fortschrittsbalken oben zeigt wie weit du bist.
+### 5. Dry-Run (optional)
+```powershell
+py tools/inject_text.py "Pokemon Unbound (v2.1.1.1).gba" translations/de/de.json --dry-run
+```
+Zeigt zu lange Strings an, verändert die ROM nicht.
 
 ---
 
-### 4. (Optional) KI-Vorabübersetzung
+## Alle Tools
 
-Kurze, repetitive Strings (Item-Namen, Attacken, UI-Texte) lassen sich per Claude-API automatisch vorübersetzen.
+| Befehl | Zweck |
+|--------|-------|
+| `extract_text.py` | Text aus ROM extrahieren |
+| `create_language.py` | Neue Sprachdatei erstellen |
+| `editor.html` | Browser-Editor zum Übersetzen |
+| `inject_text.py` | Übersetzung in ROM schreiben (+ auto README-Update) |
+| `auto_translate.py` | KI-Vorabübersetzung via Claude API |
+| `update_translation.py` | Neue Unbound-Version mergen |
+| `stats.py` | Fortschritt aller Sprachen anzeigen |
 
-**Setup:**
+---
+
+## KI-Vorabübersetzung (optional)
+
 ```powershell
 pip install anthropic
 
-# Windows (PowerShell)
+# API Key setzen (Windows PowerShell)
 $env:ANTHROPIC_API_KEY = "sk-ant-..."
 
-# Linux / macOS
-export ANTHROPIC_API_KEY="sk-ant-..."
+# Kurze Strings übersetzen (empfohlen)
+py tools/auto_translate.py translations/de/de.json --max-length 30
+
+# Oder spezifischen Text filtern
+py tools/auto_translate.py translations/de/de.json --filter "Item"
+
+# Dry-run (keine API-Kosten)
+py tools/auto_translate.py translations/de/de.json --max-length 30 --dry-run
 ```
 
-**Verwendung:**
-```powershell
-# Nur kurze Strings übersetzen (empfohlen als Einstieg)
-python3 tools/auto_translate.py translations/de/de.json --max-length 30
-
-# Strings die einen bestimmten Text enthalten (z.B. Pokémon-Namen)
-python3 tools/auto_translate.py translations/de/de.json --filter "Bulbasaur"
-
-# Dry-Run – zeigt Kandidaten ohne API-Aufruf
-python3 tools/auto_translate.py translations/de/de.json --max-length 30 --dry-run
-
-# Alle unübersetzten Strings (Vorsicht – kostet API-Tokens!)
-python3 tools/auto_translate.py translations/de/de.json --all
-```
-
-KI-übersetzte Einträge werden mit `[KI]` markiert und im Editor lila hervorgehoben.  
-Im Editor-Filter **„🤖 KI – zu prüfen"** alle KI-Einträge aufrufen und manuell prüfen.
-
-> **Geeignet für:** Item-Namen, Attacken, kurze UI-Strings  
-> **Nicht geeignet für:** lange Story-Dialoge, Strings mit vielen Control-Codes  
-> KI-Übersetzungen sind ein Startpunkt, kein Endprodukt – immer im Editor nachprüfen.
-
----
-
-### 5. Übersetzung testen (Dry-Run)
-
-Vor dem Bauen prüfen ob Strings zu lang sind:
-
-```powershell
-# Windows
-py tools/inject_text.py "Pokemon Unbound (v2.1.1.1).gba" translations/de/de.json --dry-run
-
-# Linux / macOS
-python3 tools/inject_text.py "Pokemon Unbound (v2.1.1.1).gba" translations/de/de.json --dry-run
-```
-
-Zeigt alle Einträge die gekürzt werden müssen, ohne die ROM zu verändern.
-
----
-
-### 6. ROM bauen
-
-```powershell
-# Windows
-py tools/inject_text.py "Pokemon Unbound (v2.1.1.1).gba" translations/de/de.json --output output/unbound_de.gba
-
-# Linux / macOS
-python3 tools/inject_text.py "Pokemon Unbound (v2.1.1.1).gba" translations/de/de.json --output output/unbound_de.gba
-```
-
-→ `output/unbound_de.gba` direkt im Emulator (z.B. [mGBA](https://mgba.io/)) spielbar.
-
----
-
-### 7. UPS-Patch erstellen (zum Verteilen)
-
-```powershell
-# Windows
-Flips.exe --create "Pokemon Unbound (v2.1.1.1).gba" output/unbound_de.gba output/unbound_de.ups
-
-# Linux / macOS (Flips als CLI bauen: https://github.com/Alcaro/Flips)
-./flips --create "Pokemon Unbound (v2.1.1.1).gba" output/unbound_de.gba output/unbound_de.ups
-```
-
-**Nur den `.ups`-Patch verteilen**, nie die fertige `.gba` – Copyright.  
-Spieler patchen selbst: eigene FireRed-ROM + Original-Unbound-Patch + dein Sprach-Patch.
-
----
-
-### 8. Fortschritt anzeigen
-
-```powershell
-# Windows
-py tools/stats.py
-
-# Linux / macOS
-python3 tools/stats.py
-```
-
-```
-── Pokémon Unbound Translation Progress ──────────────────
-
-  Deutsch 🇩🇪           ████████████░░░░░░░░░░░░░░░░░░  41%  (9.236/22.466)
-  Français 🇫🇷           ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░   0%  (0/22.466)
-```
-
----
-
-## Neue Unbound-Version mergen
-
-Wenn Skeli eine neue Version released:
-
-```powershell
-# 1. Neue ROM extrahieren
-python3 tools/extract_text.py "Pokemon Unbound (v2.2).gba" --output translations/en_source_new.json
-
-# 2. Übersetzung mergen – behält alles was schon fertig ist
-python3 tools/update_translation.py translations/en_source.json translations/en_source_new.json translations/de/de.json
-
-# 3. Alten Source ersetzen
-# Windows:
-copy translations\en_source_new.json translations\en_source.json
-# Linux / macOS:
-cp translations/en_source_new.json translations/en_source.json
-
-# 4. Editor öffnen → nur neue/geänderte Einträge übersetzen
-```
-
-Das Merge-Skript markiert automatisch:
-- `⚡ NEU` – neue Strings, müssen übersetzt werden
-- `⚠ GEÄNDERT` – englischer Text hat sich geändert, alte DE-Übersetzung als Notiz gespeichert
-- Alles andere bleibt unberührt
-
-Ein detaillierter Report wird in `translations/de/` gespeichert.
-
----
-
-## Weitere Sprache hinzufügen
-
-```powershell
-python3 tools/create_language.py translations/en_source.json translations/fr/fr.json
-```
-
-Editor öffnen, `fr.json` laden, übersetzen. Keine Code-Änderungen nötig.  
-Alle Sprachen teilen dieselbe Basis (`en_source.json`).
+KI-Strings werden mit `[KI]` markiert und müssen manuell im Editor geprüft werden.
 
 ---
 
 ## Bekannte Einschränkungen
 
-### Stringlänge
-GBA-ROMs haben **fixe Speicherbereiche**. Eine Übersetzung darf **nicht länger** (in Bytes) sein als der Original-String. Deutsch ist oft 20–30% länger → kürzen nötig.
+**Stringlänge:** Deutsche Texte sind oft 20–30% länger. Mit `--dry-run` prüfen, welche zu lang sind.
 
-**Kürzungs-Tricks:**
+**Sonderzeichen:** Bei Anzeigefehlern mit ä/ö/ü folgende Fallbacks nutzen:
+- `ä` → `ae`, `ö` → `oe`, `ü` → `ue`, `ß` → `ss`
 
-| Englisch | Deutsch (zu lang) | Deutsch (ok) |
-|----------|-------------------|--------------|
-| `You received` | `Du hast erhalten` | `Erhalten:` |
-| `Do you want to` | `Möchtest du` | `Willst du` |
-| `Pokémon Trainer` | `Pokémon-Trainer` | `Trainer` |
-| `Press A to continue` | `Drücke A um fortzufahren` | `A: Weiter` |
-| `It's super effective!` | `Es ist sehr effektiv!` | `Sehr effektiv!` |
-| `What will you do?` | `Was wirst du tun?` | `Was tun?` |
+**Control-Codes bewahren:**
+- `\n` = Zeilenumbruch
+- `\p` = Seitenumbruch
+- `{PLAYER}`, `{RIVAL}`, `{COLOR}`, etc.
 
-`--dry-run` zeigt alle zu langen Strings vor der Injektion an.
+---
 
-### Sonderzeichen (ä ö ü Ä Ö Ü ß)
-Der Standard-FireRed-Charset unterstützt `äöüÄÖÜß` nicht.  
-Unbound nutzt CFRU mit erweitertem Charset – teste im Emulator ob `ä` korrekt angezeigt wird.  
-Wenn nicht, folgende Fallbacks verwenden:
+## Workflow für neue Unbound-Version
 
-| Zeichen | Fallback |
-|---------|----------|
-| `ä` | `ae` |
-| `ö` | `oe` |
-| `ü` | `ue` |
-| `Ä` | `Ae` |
-| `Ö` | `Oe` |
-| `Ü` | `Ue` |
-| `ß` | `ss` |
+```powershell
+# 1. Neue ROM extrahieren
+py tools/extract_text.py "Pokemon Unbound (v2.2).gba" --output translations/en_source_new.json
 
-> Das `auto_translate.py`-Skript verwendet automatisch die Fallbacks.
+# 2. Merge → behält fertige Übersetzungen
+py tools/update_translation.py translations/en_source.json translations/en_source_new.json translations/de/de.json
 
-### Control Codes
-Alle Control-Codes aus dem Original beibehalten:
+# 3. Alte Source ersetzen
+copy translations\en_source_new.json translations\en_source.json
 
-| Code | Bedeutung |
-|------|-----------|
-| `\n` | Zeilenumbruch (neue Zeile, selbe Textbox) |
-| `\p` | Seitenumbruch (neue Textbox, Spieler drückt A) |
-| `{PLAYER}` | Name des Spielers |
-| `{RIVAL}` | Name des Rivals |
-| `{COLOR}` | Textfarbe |
-| `{SHADOW}` | Textschatten |
-| `{HIGHLIGHT}` | Texthervorhebung |
-
-**Beispiel:**
+# 4. Im Editor neue Strings übersetzen
 ```
-EN: Hello, {PLAYER}!\pAre you ready?
-DE: Hallo, {PLAYER}!\pBist du bereit?
-```
-
-### Abgeschnittene Strings
-Manche Strings im Editor beginnen mitten im Wort (z.B. `mon Unbound!` statt `Pokémon Unbound!`).  
-Das sind Extraktionsfehler – einfach überspringen oder als Kommentar markieren.
 
 ---
 
 ## Dateistruktur
 
 ```
-pokemon-unbound-translation/
-├── .gitignore
-├── README.md
-├── tools/
-│   ├── extract_text.py       ← Text aus ROM extrahieren
-│   ├── create_language.py    ← Neue Sprache anlegen
-│   ├── inject_text.py        ← Übersetzung ins ROM schreiben
-│   ├── update_translation.py ← Neue ROM-Version mergen
-│   ├── auto_translate.py     ← KI-Vorabübersetzung (Claude API)
-│   ├── stats.py              ← Fortschritt aller Sprachen anzeigen
-│   └── editor.html           ← Browser-Editor (kein Server nötig)
-├── translations/
-│   ├── en_source.json        ← Extrahierte Englisch-Quelle (NICHT editieren)
-│   ├── de/
-│   │   └── de.json
-│   ├── fr/
-│   │   └── fr.json
-│   └── es/
-│       └── es.json
-└── output/                   ← Fertige ROMs (in .gitignore)
+tools/
+├── extract_text.py
+├── create_language.py
+├── inject_text.py
+├── auto_translate.py
+├── update_translation.py
+├── stats.py
+└── editor.html
+
+translations/
+├── en_source.json
+├── de/
+│   └── de.json
+├── fr/
+│   └── fr.json
+└── ... (weitere Sprachen)
+
+output/
+└── (fertige .gba Dateien)
 ```
-
----
-
-## Vollständiger Workflow
-
-```
-ROM (.gba)
-    │
-    ▼  python3 tools/extract_text.py
-translations/en_source.json
-    │
-    ▼  python3 tools/create_language.py
-translations/de/de.json  (leer)
-    │
-    ▼  (optional) python3 tools/auto_translate.py --max-length 30
-translations/de/de.json  (KI-vorübersetzt, zum Prüfen markiert)
-    │
-    ▼  tools/editor.html im Browser
-translations/de/de.json  (übersetzt + KI-Einträge geprüft)
-    │
-    ▼  python3 tools/inject_text.py --dry-run
-Längen prüfen, ggf. kürzen
-    │
-    ▼  python3 tools/inject_text.py
-output/unbound_de.gba  →  Emulator testen
-    │
-    ▼  flips --create
-output/unbound_de.ups  ←  verteilen
-```
-
----
-
-## Alle Befehle auf einen Blick
-
-```bash
-# Einmalig: extrahieren + Sprachdatei erstellen
-python3 tools/extract_text.py "Pokemon Unbound (v2.1.1.1).gba" --output translations/en_source.json
-python3 tools/create_language.py translations/en_source.json translations/de/de.json
-
-# Optional: KI-Vorabübersetzung kurzer Strings
-export ANTHROPIC_API_KEY="sk-ant-..."
-python3 tools/auto_translate.py translations/de/de.json --max-length 30
-
-# Wiederholt: testen + ROM bauen
-python3 tools/inject_text.py "Pokemon Unbound (v2.1.1.1).gba" translations/de/de.json --dry-run
-python3 tools/inject_text.py "Pokemon Unbound (v2.1.1.1).gba" translations/de/de.json --output output/unbound_de.gba
-
-# Fortschritt
-python3 tools/stats.py
-
-# Neue Unbound-Version
-python3 tools/extract_text.py "Pokemon Unbound (v2.2).gba" --output translations/en_source_new.json
-python3 tools/update_translation.py translations/en_source.json translations/en_source_new.json translations/de/de.json
-cp translations/en_source_new.json translations/en_source.json
-
-# Neue Sprache
-python3 tools/create_language.py translations/en_source.json translations/fr/fr.json
-```
-
----
-
-## Mitmachen
-
-Alle Sprachen willkommen! Schreib mich an um Zugriff auf das Repo zu bekommen, dann direkt loslegen:
-
-1. Repo klonen: `git clone https://github.com/RedConcrete/pokemon-unbound-translation.git`
-2. `python3 tools/create_language.py translations/en_source.json translations/XX/XX.json`
-3. Im Editor übersetzen
-4. Direkt pushen: `git add translations/XX/XX.json && git commit -m "XX: Start" && git push`
-
-Aktueller Status der Sprachen: `python3 tools/stats.py`
 
 ---
 
 ## Lizenz
 
-MIT – siehe [LICENSE](LICENSE).  
-Die Übersetzungsdaten (`translations/`) stehen unter CC BY-SA 4.0.  
-**Keine `.gba`-Dateien committen oder verteilen** – nur `.ups`-Patches (Copyright Nintendo / Game Freak).
+MIT – [LICENSE](LICENSE)  
+Übersetzungsdaten: CC BY-SA 4.0  
+**Nur `.ups`-Patches verteilen, nie `.gba` – Copyright Nintendo/Game Freak**
