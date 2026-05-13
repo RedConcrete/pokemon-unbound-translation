@@ -6,289 +6,157 @@
 <title>Pokémon Unbound – Übersetzungseditor</title>
 <style>
   :root {
-    --bg: #1a1a2e;
-    --panel: #16213e;
-    --card: #0f3460;
-    --accent: #e94560;
-    --accent2: #00b4d8;
-    --text: #eaeaea;
-    --muted: #888;
-    --done: #2d6a4f;
-    --done-border: #52b788;
-    --gap: 12px;
-    --radius: 8px;
+    --bg: #1a1a2e; --panel: #16213e; --card: #0f3460;
+    --accent: #e94560; --accent2: #00b4d8;
+    --text: #eaeaea; --muted: #888;
+    --done: #2d6a4f; --done-border: #52b788;
+    --gap: 12px; --radius: 8px;
   }
   * { box-sizing: border-box; margin: 0; padding: 0; }
   body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', system-ui, sans-serif; font-size: 14px; }
 
-  /* ── Header ── */
-  header {
-    background: var(--panel);
-    border-bottom: 2px solid var(--accent);
-    padding: 14px 20px;
-    display: flex;
-    align-items: center;
-    gap: 16px;
-    flex-wrap: wrap;
-  }
+  /* Header */
+  header { background: var(--panel); border-bottom: 2px solid var(--accent); padding: 14px 20px; display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
   header h1 { font-size: 18px; color: var(--accent2); flex: 1; }
   .stats { display: flex; gap: 12px; flex-wrap: wrap; }
   .stat { background: var(--card); border-radius: var(--radius); padding: 6px 12px; font-size: 12px; }
   .stat span { font-weight: bold; color: var(--accent2); }
-  .progress-bar {
-    width: 100%;
-    height: 4px;
-    background: var(--card);
-    border-radius: 2px;
-    margin-top: 8px;
-  }
+  .progress-bar { width: 100%; height: 4px; background: var(--card); border-radius: 2px; margin-top: 8px; }
   .progress-fill { height: 100%; background: var(--done-border); border-radius: 2px; transition: width .3s; }
 
-  /* ── Toolbar ── */
-  .toolbar {
-    background: var(--panel);
-    padding: 10px 20px;
-    display: flex;
-    gap: 10px;
-    flex-wrap: wrap;
-    align-items: center;
-    border-bottom: 1px solid #333;
-    position: sticky;
-    top: 0;
-    z-index: 10;
-  }
-  .toolbar input[type=text] {
-    background: var(--bg);
-    border: 1px solid #444;
-    color: var(--text);
-    border-radius: var(--radius);
-    padding: 6px 10px;
-    width: 260px;
-  }
-  .toolbar select {
-    background: var(--bg);
-    border: 1px solid #444;
-    color: var(--text);
-    border-radius: var(--radius);
-    padding: 6px 10px;
-  }
-  .btn {
-    padding: 6px 14px;
-    border-radius: var(--radius);
-    border: none;
-    cursor: pointer;
-    font-size: 13px;
-    font-weight: 600;
-    transition: opacity .15s;
-  }
+  /* Toolbar */
+  .toolbar { background: var(--panel); padding: 10px 20px; display: flex; gap: 10px; flex-wrap: wrap; align-items: center; border-bottom: 1px solid #333; position: sticky; top: 0; z-index: 10; }
+  .toolbar input[type=text] { background: var(--bg); border: 1px solid #444; color: var(--text); border-radius: var(--radius); padding: 6px 10px; width: 260px; }
+  .toolbar select { background: var(--bg); border: 1px solid #444; color: var(--text); border-radius: var(--radius); padding: 6px 10px; }
+  .btn { padding: 6px 14px; border-radius: var(--radius); border: none; cursor: pointer; font-size: 13px; font-weight: 600; transition: opacity .15s; }
   .btn:hover { opacity: .85; }
   .btn-accent  { background: var(--accent);  color: #fff; }
   .btn-blue    { background: var(--accent2); color: #000; }
-  .btn-neutral { background: #333;           color: var(--text); }
-  .file-label {
-    background: #333;
-    color: var(--text);
-    padding: 6px 14px;
-    border-radius: var(--radius);
-    cursor: pointer;
-    font-size: 13px;
-    font-weight: 600;
-  }
+  .btn-neutral { background: #333; color: var(--text); }
+  .file-label { background: #333; color: var(--text); padding: 6px 14px; border-radius: var(--radius); cursor: pointer; font-size: 13px; font-weight: 600; }
   .file-label:hover { opacity: .85; }
   #file-input { display: none; }
 
-  /* ── Main list ── */
+  /* Entry list */
   main { padding: 16px 20px; }
   #string-list { display: flex; flex-direction: column; gap: var(--gap); }
-
-  .entry {
-    background: var(--panel);
-    border-radius: var(--radius);
-    border: 1px solid #333;
-    overflow: hidden;
-    transition: border-color .15s;
-  }
+  .entry { background: var(--panel); border-radius: var(--radius); border: 1px solid #333; overflow: hidden; transition: border-color .15s; }
   .entry.done { border-color: var(--done-border); background: var(--done); }
-  .entry.done .en-text { opacity: .7; }
 
-  .entry-header {
-    padding: 8px 12px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    background: rgba(0,0,0,.2);
-    font-size: 12px;
-    color: var(--muted);
-  }
-  .offset-badge {
-    background: var(--card);
-    border-radius: 4px;
-    padding: 2px 8px;
-    font-family: monospace;
-    color: var(--accent2);
-  }
-  .done-badge {
-    margin-left: auto;
-    background: var(--done-border);
-    color: #000;
-    border-radius: 4px;
-    padding: 2px 8px;
-    font-size: 11px;
-    font-weight: bold;
-    display: none;
-  }
+  .entry-header { padding: 8px 12px; display: flex; align-items: center; gap: 10px; background: rgba(0,0,0,.2); font-size: 12px; color: var(--muted); }
+  .offset-badge { background: var(--card); border-radius: 4px; padding: 2px 8px; font-family: monospace; color: var(--accent2); }
+  .done-badge { margin-left: auto; background: var(--done-border); color: #000; border-radius: 4px; padding: 2px 8px; font-size: 11px; font-weight: bold; display: none; }
   .entry.done .done-badge { display: inline; }
 
-  .entry-body {
-    padding: 10px 12px;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 10px;
-  }
+  .entry-body { padding: 10px 12px; display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
   @media (max-width: 700px) { .entry-body { grid-template-columns: 1fr; } }
 
-  .field label {
-    display: block;
-    font-size: 11px;
-    color: var(--muted);
-    margin-bottom: 4px;
-    text-transform: uppercase;
-    letter-spacing: .05em;
+  .field label { display: flex; align-items: center; gap: 6px; font-size: 11px; color: var(--muted); margin-bottom: 4px; text-transform: uppercase; letter-spacing: .05em; }
+
+  /* small action buttons in label row */
+  .label-btn {
+    padding: 1px 8px; border-radius: 3px; border: 1px solid #555;
+    background: var(--card); color: var(--muted); cursor: pointer;
+    font-size: 10px; font-weight: 600; letter-spacing: .03em;
+    transition: background .15s, color .15s, border-color .15s; text-transform: none;
   }
-  .en-text {
-    cursor: pointer;
-    background: var(--bg);
-    border: 1px solid #333;
-    border-radius: var(--radius);
-    padding: 8px;
-    font-family: monospace;
-    font-size: 13px;
-    white-space: pre-wrap;
-    min-height: 60px;
-    color: #bbb;
-    user-select: text;
-  }
-  .en-text.copied {
-    border-color: var(--done-border) !important;
-    color: #52b788;
-    transition: all .2s;
-  }
-  .trans-input {
-    width: 100%;
-    background: var(--bg);
-    border: 1px solid #555;
-    border-radius: var(--radius);
-    padding: 8px;
-    font-family: monospace;
-    font-size: 13px;
-    color: var(--text);
-    resize: vertical;
-    min-height: 60px;
-    transition: border-color .15s;
-  }
+  .label-btn:hover { background: #1a3a5a; color: var(--accent2); border-color: var(--accent2); }
+  .label-btn.copied { background: #1b4332; color: var(--done-border); border-color: var(--done-border); }
+  .label-btn.preview-active { border-color: var(--accent2); color: var(--accent2); }
+
+  .en-text { background: var(--bg); border: 1px solid #333; border-radius: var(--radius); padding: 8px; font-family: monospace; font-size: 13px; white-space: pre-wrap; min-height: 60px; color: #bbb; user-select: text; }
+  .trans-input { width: 100%; background: var(--bg); border: 1px solid #555; border-radius: var(--radius); padding: 8px; font-family: monospace; font-size: 13px; color: var(--text); resize: vertical; min-height: 60px; transition: border-color .15s; }
   .trans-input:focus { outline: none; border-color: var(--accent2); }
   .entry.done .trans-input { border-color: var(--done-border); }
 
-  .byte-counter {
-    font-size: 11px;
-    font-family: monospace;
-    padding: 2px 7px;
-    border-radius: 4px;
-    background: var(--card);
-    color: var(--muted);
-    white-space: nowrap;
-    transition: background .15s, color .15s;
-  }
-  .byte-counter.ok     { background: #1b4332; color: #52b788; }
-  .byte-counter.warn   { background: #4a3000; color: #fca311; }
-  .byte-counter.over   { background: #4a0000; color: #ff6b6b; font-weight: bold; }
-  .trans-input.over    { border-color: #ff6b6b !important; }
+  .byte-counter { font-size: 11px; font-family: monospace; padding: 2px 7px; border-radius: 4px; background: var(--card); color: var(--muted); white-space: nowrap; transition: background .15s, color .15s; }
+  .byte-counter.ok   { background: #1b4332; color: #52b788; }
+  .byte-counter.warn { background: #4a3000; color: #fca311; }
+  .byte-counter.over { background: #4a0000; color: #ff6b6b; font-weight: bold; }
+  .trans-input.over  { border-color: #ff6b6b !important; }
 
-  .line-warnings {
-    margin-top: 4px;
-    display: flex;
-    flex-direction: column;
-    gap: 2px;
-    font-size: 11px;
-    font-family: monospace;
-  }
-  .line-warn {
-    background: #4a2000;
-    color: #fca311;
-    border-radius: 3px;
-    padding: 2px 6px;
-  }
-  .line-warn.line-ok {
-    background: #1b3a2a;
-    color: #52b788;
-  }
+  .line-warnings { padding: 4px 12px; background: rgba(0,0,0,.15); display: flex; flex-direction: column; gap: 2px; font-size: 11px; font-family: monospace; }
+  .line-warn { background: #4a2000; color: #fca311; border-radius: 3px; padding: 2px 6px; }
 
-  .entry-footer {
-    padding: 6px 12px;
-    display: flex;
-    gap: 8px;
-    align-items: center;
-    background: rgba(0,0,0,.1);
-  }
-  .comment-input {
-    flex: 1;
-    background: transparent;
-    border: none;
-    border-bottom: 1px solid #444;
-    color: var(--muted);
-    font-size: 12px;
-    padding: 2px 4px;
-  }
+  .umlaut-warn { display: none; font-size: 11px; font-family: monospace; background: #4a0030; color: #ff8ab0; border-radius: 3px; padding: 2px 6px; margin: 0 12px 4px; }
+  .umlaut-warn.visible { display: block; }
+
+  .entry-footer { padding: 6px 12px; display: flex; gap: 8px; align-items: center; background: rgba(0,0,0,.1); }
+  .comment-input { flex: 1; background: transparent; border: none; border-bottom: 1px solid #444; color: var(--muted); font-size: 12px; padding: 2px 4px; }
   .comment-input:focus { outline: none; border-color: var(--accent2); color: var(--text); }
-  .mark-done-btn {
-    padding: 4px 10px;
-    border-radius: 4px;
-    border: 1px solid var(--done-border);
-    background: transparent;
-    color: var(--done-border);
-    cursor: pointer;
-    font-size: 12px;
-    font-weight: 600;
-  }
+  .mark-done-btn { padding: 4px 10px; border-radius: 4px; border: 1px solid var(--done-border); background: transparent; color: var(--done-border); cursor: pointer; font-size: 12px; font-weight: 600; }
   .entry.done .mark-done-btn { background: var(--done-border); color: #000; }
 
-  /* AI-translated entries */
+  /* AI badge */
   .entry.ai-translated { border-color: #7b5ea7; }
   .entry.ai-translated .entry-header { background: rgba(123,94,167,.15); }
-  .ai-badge {
-    font-size: 10px;
-    font-weight: 700;
-    padding: 2px 7px;
-    border-radius: 4px;
-    background: #4a2d6e;
-    color: #c084fc;
-    letter-spacing: .04em;
-    display: none;
-  }
+  .ai-badge { font-size: 10px; font-weight: 700; padding: 2px 7px; border-radius: 4px; background: #4a2d6e; color: #c084fc; letter-spacing: .04em; display: none; }
   .entry.ai-translated .ai-badge { display: inline; }
   .entry.ai-translated.done .ai-badge { display: none; }
-  .trans-input.ai-highlight { border-color: #7b5ea7; }
   .entry.ai-translated.done .trans-input { border-color: var(--done-border); }
 
-  /* ── Empty state ── */
-  #empty-state {
-    text-align: center;
-    padding: 60px;
-    color: var(--muted);
-    display: none;
+  /* ── Preview Modal ── */
+  #preview-modal { display: none; position: fixed; inset: 0; background: rgba(0,0,0,.8); z-index: 1000; align-items: center; justify-content: center; }
+  #preview-modal.open { display: flex; }
+
+  .preview-dialog { background: #1a1a2e; border: 2px solid #444; border-radius: 10px; padding: 24px; max-width: 600px; width: 95%; display: flex; flex-direction: column; gap: 14px; }
+  .preview-dialog h3 { font-size: 13px; color: var(--accent2); font-family: monospace; }
+
+  /* GBA textbox */
+  .gba-wrap { display: flex; flex-direction: column; align-items: center; gap: 8px; }
+  .gba-page-info { font-size: 11px; color: var(--muted); font-family: monospace; }
+  .gba-box {
+    position: relative;
+    width: 100%; max-width: 520px;
+    min-height: 76px;
+    background: #f0ece0;
+    border: 4px solid #222;
+    border-radius: 3px;
+    box-shadow: inset 0 0 0 2px #999, 3px 3px 0 #000;
+    padding: 10px 14px 18px;
+    font-family: 'Courier New', monospace;
+    font-size: 14px;
+    line-height: 1.7;
+    color: #111;
   }
+  /* golden trim lines */
+  .gba-box::before, .gba-box::after {
+    content: '';
+    position: absolute;
+    left: 8px; right: 8px; height: 3px;
+    background: linear-gradient(90deg, #b8901a, #f0c840, #b8901a);
+    border-radius: 2px;
+  }
+  .gba-box::before { top: 3px; }
+  .gba-box::after  { bottom: 3px; }
+
+  .gba-arrow { position: absolute; bottom: 6px; right: 10px; width: 0; height: 0; border-left: 6px solid transparent; border-right: 6px solid transparent; border-top: 9px solid #e94560; display: none; animation: bounce .6s ease-in-out infinite alternate; }
+  .gba-arrow.show { display: block; }
+  @keyframes bounce { from { transform: translateY(0); } to { transform: translateY(3px); } }
+
+  /* highlights inside gba box */
+  .hl-umlaut { background: #ff4444; color: #fff; border-radius: 2px; padding: 0 1px; }
+  .hl-over   { background: #e8a000; color: #000; border-radius: 2px; }
+
+  /* nav */
+  .preview-nav { display: flex; gap: 8px; align-items: center; justify-content: center; }
+  .pnav-btn { padding: 5px 18px; border-radius: var(--radius); border: 1px solid #555; background: var(--card); color: var(--text); cursor: pointer; font-size: 13px; font-weight: 600; }
+  .pnav-btn:disabled { opacity: .3; cursor: default; }
+
+  /* checks */
+  .preview-checks { display: flex; flex-direction: column; gap: 3px; font-size: 12px; font-family: monospace; border-top: 1px solid #333; padding-top: 10px; }
+  .chk-ok   { color: #52b788; }
+  .chk-warn { color: #fca311; }
+  .chk-err  { color: #ff6b6b; font-weight: bold; }
+
+  .preview-close { align-self: flex-end; padding: 5px 16px; border-radius: var(--radius); border: 1px solid #555; background: #333; color: var(--text); cursor: pointer; font-size: 13px; font-weight: 600; }
+
+  /* Empty state */
+  #empty-state { text-align: center; padding: 60px; color: var(--muted); display: none; }
   #empty-state h2 { font-size: 20px; margin-bottom: 10px; color: var(--text); }
 
-  /* ── Toast ── */
-  #toast {
-    position: fixed; bottom: 24px; right: 24px;
-    background: var(--done-border); color: #000;
-    padding: 10px 18px; border-radius: var(--radius);
-    font-weight: 600; font-size: 13px;
-    opacity: 0; pointer-events: none;
-    transition: opacity .3s;
-    z-index: 999;
-  }
+  /* Toast */
+  #toast { position: fixed; bottom: 24px; right: 24px; background: var(--done-border); color: #000; padding: 10px 18px; border-radius: var(--radius); font-weight: 600; font-size: 13px; opacity: 0; pointer-events: none; transition: opacity .3s; z-index: 999; }
   #toast.show { opacity: 1; }
 </style>
 </head>
@@ -309,19 +177,17 @@
 <div class="toolbar">
   <label class="file-label" for="file-input">📂 JSON laden</label>
   <input type="file" id="file-input" accept=".json">
-
   <input type="text" id="search-input" placeholder="Suche (EN oder Übersetzung)…">
   <span id="search-count" style="font-size:12px;color:var(--muted);white-space:nowrap;display:none"></span>
-
   <select id="filter-select">
     <option value="all">Alle anzeigen</option>
     <option value="open">Nur offen</option>
     <option value="done">Nur fertig</option>
     <option value="toolong">Zu lang (Bytes) ⚠</option>
     <option value="lineover">Zeile zu lang ⚠</option>
+    <option value="umlaut">Umlaut-Fehler ⚠</option>
     <option value="ai">🤖 KI – zu prüfen</option>
   </select>
-
   <button class="btn btn-blue" onclick="saveJSON()">💾 JSON speichern</button>
   <button class="btn btn-neutral" onclick="copyStats()">📊 Stats kopieren</button>
 </div>
@@ -329,16 +195,35 @@
 <main>
   <div id="empty-state">
     <h2>Keine Datei geladen</h2>
-    <p>Klicke auf „JSON laden" und wähle deine <code>de.json</code> Datei.</p>
-    <p style="margin-top:8px;color:#666">Erstelle sie zuerst mit:<br><code>python tools/create_language.py translations/en_source.json translations/de/de.json</code></p>
+    <p>Klicke auf „JSON laden" und wähle deine <code>de.json</code>.</p>
   </div>
   <div id="string-list"></div>
 </main>
 
+<!-- Preview Modal -->
+<div id="preview-modal">
+  <div class="preview-dialog">
+    <h3 id="prev-title">Vorschau</h3>
+    <div class="gba-wrap">
+      <div class="gba-page-info" id="prev-page-info"></div>
+      <div class="gba-box">
+        <div id="prev-content" style="white-space:pre-wrap"></div>
+        <div class="gba-arrow" id="prev-arrow"></div>
+      </div>
+    </div>
+    <div class="preview-nav">
+      <button class="pnav-btn" id="prev-back">◀ Zurück</button>
+      <button class="pnav-btn" id="prev-next">Weiter ▶</button>
+    </div>
+    <div class="preview-checks" id="prev-checks"></div>
+    <button class="preview-close" id="prev-close">✕ Schließen</button>
+  </div>
+</div>
+
 <div id="toast"></div>
 
 <script>
-let allData = {};       // { offset: entry }
+let allData = {};
 let currentFile = null;
 
 // ── Load JSON ──────────────────────────────────────────────────────────────
@@ -352,146 +237,256 @@ document.getElementById('file-input').addEventListener('change', e => {
       allData = JSON.parse(ev.target.result);
       renderAll();
       toast(`✅ ${Object.keys(allData).length.toLocaleString()} Einträge geladen`);
-    } catch (err) {
-      alert('Fehler beim Laden: ' + err.message);
-    }
+    } catch (err) { alert('Fehler beim Laden: ' + err.message); }
   };
   reader.readAsText(file, 'utf-8');
 });
 
-// ── Render ─────────────────────────────────────────────────────────────────
-function getFiltered() {
-  const search = document.getElementById('search-input').value.toLowerCase();
-  const filter = document.getElementById('filter-select').value;
-  return Object.entries(allData).filter(([offset, d]) => {
-    if (filter === 'open' && d.done) return false;
-    if (filter === 'done' && !d.done) return false;
-    if (filter === 'lineover') {
-      const lines = (d.translation || '').split(/\\[np]/);
-      const hasOver = lines.some(l => l.replace(/\{[^}]+\}/g, 'X').length > MAX_LINE_CHARS);
-      if (!hasOver) return false;
-    }
-    if (filter === 'ai') {
-      const isAi = d.comment && d.comment.includes('[KI]');
-      if (!isAi || d.done) return false;
-    }
-    if (filter === 'toolong') {
-      const used = d.translation ? countGbaBytes(d.translation) : 0;
-      if (used <= (d.byte_length || 999)) return false;
-    }
-    if (search) {
-      const inEn = d.en.toLowerCase().includes(search);
-      const inTrans = (d.translation || '').toLowerCase().includes(search);
-      const inOffset = offset.toLowerCase().includes(search);
-      if (!inEn && !inTrans && !inOffset) return false;
-    }
-    return true;
-  });
-}
-
-function renderAll() {
-  const list = document.getElementById('string-list');
-  const filtered = getFiltered();
-  const empty = document.getElementById('empty-state');
-
-  if (Object.keys(allData).length === 0) {
-    empty.style.display = 'block';
-    list.innerHTML = '';
-    updateStats();
-    return;
-  }
-  empty.style.display = 'none';
-
-  // Virtual scroll: only render first 200, load more on scroll
-  list.innerHTML = '';
-  const chunk = filtered.slice(0, 300);
-  chunk.forEach(([offset, data]) => {
-    list.appendChild(buildEntry(offset, data));
-  });
-
-  if (filtered.length > 300) {
-    const more = document.createElement('p');
-    more.style.cssText = 'text-align:center;padding:20px;color:var(--muted)';
-    more.textContent = `… und ${(filtered.length - 300).toLocaleString()} weitere. Verfeinere die Suche für mehr.`;
-    list.appendChild(more);
-  }
-
-  const countEl = document.getElementById('search-count');
-  const search = document.getElementById('search-input').value;
-  const filter = document.getElementById('filter-select').value;
-  if (search || filter !== 'all') {
-    countEl.textContent = `${filtered.length.toLocaleString()} Treffer`;
-    countEl.style.display = 'inline';
-  } else {
-    countEl.style.display = 'none';
-  }
-
-  updateStats();
-}
-
 // ── GBA byte counter ───────────────────────────────────────────────────────
-// Mirrors the Python encode_gba_string logic in JS
-// Each ASCII letter = 1 byte, accented chars = 1 byte, \n \p = 1 byte, END = 1 byte
+// {COLOR} = 2 bytes (opcode + arg); {HIGHLIGHT}/{SHADOW} = 1 byte each; \n \p = 1 byte; chars = 1 byte
 function countGbaBytes(text) {
-  // Control tokens like {PLAYER} {SHADOW} etc = 1-2 bytes, treat as 1
-  let count = 0;
-  let i = 0;
+  let count = 0, i = 0;
   while (i < text.length) {
     if (text[i] === '{') {
       const end = text.indexOf('}', i);
       const token = end !== -1 ? text.slice(i, end + 1) : text.slice(i);
-      // COLOR/HIGHLIGHT/SHADOW have 1 arg byte → 2 bytes total
-      count += (token === '{COLOR}' || token === '{HIGHLIGHT}' || token === '{SHADOW}') ? 2 : 1;
+      count += (token === '{COLOR}') ? 2 : 1;
       i = end !== -1 ? end + 1 : text.length;
     } else if (text.slice(i, i+2) === '\\n' || text.slice(i, i+2) === '\\p') {
       count += 1; i += 2;
-    } else {
-      count += 1; i += 1;
-    }
+    } else { count += 1; i += 1; }
   }
-  return count + 1; // +1 for END byte (0xFF)
+  return count + 1; // +1 END byte 0xFF
 }
 
-// ── Line length checker ────────────────────────────────────────────────────
-// GBA textbox: max ~34 chars per line before text overflows
-const MAX_LINE_CHARS = 34;
+// ── Umlaut check ───────────────────────────────────────────────────────────
+const UMLAUT_RE = /[äöüÄÖÜß]/;
+function hasUmlauts(text) { return UMLAUT_RE.test(text); }
+
+// ── Line length check ──────────────────────────────────────────────────────
+// {HIGHLIGHT} / {SHADOW} = textbox break → new segment
+const MAX_LINE = 34;
+
+function getSegments(text) {
+  // split on \n, \p, {HIGHLIGHT}, {SHADOW}
+  // \p = line break, {HIGHLIGHT}/{SHADOW} = page break; \n = placeholder (not a break)
+  return text.split(/\\p|\{HIGHLIGHT\}|\{SHADOW\}/);
+}
 
 function checkLineLength(text) {
-  // \p and \n in the JSON are stored as literal backslash+letter
-  const lines = text.split(/\\[np]/);
-  const results = [];
-  lines.forEach((line, i) => {
-    const clean = line.replace(/\{[^}]+\}/g, 'X');
+  return getSegments(text).map((seg, i) => {
+    const clean = seg.replace(/\{[^}]+\}/g, '');
     const len = clean.length;
-    if (len > 0) results.push({ preview: line.slice(0, 35), len, over: len > MAX_LINE_CHARS, idx: i });
-  });
-  return results;
+    return { seg, clean, len, over: len > MAX_LINE, idx: i };
+  }).filter(r => r.clean.length > 0);
 }
 
 function isTranslationValid(text, byteLength) {
   if (!text.trim()) return { ok: false, reason: 'Kein Text' };
+  if (hasUmlauts(text)) return { ok: false, reason: 'Enthält Umlaute (ä/ö/ü/ß)' };
   if (byteLength) {
     const used = countGbaBytes(text);
     if (used > byteLength) return { ok: false, reason: `${used}/${byteLength}b – zu lang` };
   }
   const over = checkLineLength(text).filter(l => l.over);
-  if (over.length > 0) return { ok: false, reason: `Zeile ${over[0].idx + 1}: ${over[0].len}/${MAX_LINE_CHARS} Zeichen` };
+  if (over.length) return { ok: false, reason: `Segment ${over[0].idx+1}: ${over[0].len}/${MAX_LINE} Zeichen` };
   return { ok: true };
 }
 
 function updateLineWarnings(div, text) {
-  const container = div.querySelector('.line-warnings');
-  if (!container) return;
-  if (!text.trim()) { container.innerHTML = ''; return; }
-  const results = checkLineLength(text);
-  const over = results.filter(r => r.over);
-  if (over.length === 0) {
-    container.innerHTML = '<span style="color:#52b788;font-size:11px;font-family:monospace;padding:0 4px">✓ Zeilen OK</span>';
-  } else {
-    container.innerHTML = over.map(r =>
-      `<span class="line-warn">⚠ Zeile ${r.idx+1}: ${r.len} Zeichen (max ${MAX_LINE_CHARS}) — &quot;${r.preview.replace(/&/g,'&amp;').replace(/</g,'&lt;')}…&quot;</span>`
-    ).join('');
+  const c = div.querySelector('.line-warnings');
+  if (!c) return;
+  if (!text.trim()) { c.innerHTML = ''; return; }
+  const over = checkLineLength(text).filter(r => r.over);
+  c.innerHTML = over.length === 0
+    ? '<span style="color:#52b788;font-size:11px;font-family:monospace;padding:0 4px">✓ Segmente OK</span>'
+    : over.map(r => `<span class="line-warn">⚠ Segment ${r.idx+1}: ${r.len} Zeichen (max ${MAX_LINE}) — &quot;${escHtml(r.seg.slice(0,36))}…&quot;</span>`).join('');
+}
+
+function updateUmlautWarning(div, text) {
+  const el = div.querySelector('.umlaut-warn');
+  if (!el) return;
+  const found = text.match(/[äöüÄÖÜß]/g) || [];
+  if (found.length) {
+    const uniq = [...new Set(found)].join(' ');
+    el.textContent = `⚠ Umlaut gefunden: ${uniq}  →  ae oe ue ss  /  AE OE UE`;
+    el.classList.add('visible');
+  } else { el.classList.remove('visible'); }
+}
+
+// ── Preview modal ──────────────────────────────────────────────────────────
+let prevPages = [];
+let prevPageIdx = 0;
+
+function buildPreviewPages(text) {
+  // Confirmed GBA rules:
+  //   \p          = line break within box (no arrow, no clear)
+  //   {HIGHLIGHT} = ▼ arrow, wait A, scroll line up
+  //   {SHADOW}    = clear box silently (no arrow)
+  //   \nX         = dynamic placeholder (NOT a line break)
+
+  if (!text.trim()) return [{ lines: ['(leer)'], arrow: false }];
+
+  const pages = [];
+  const parts = text.split(/(\\p|\{HIGHLIGHT\}|\{SHADOW\})/g);
+  let curLines = [''];
+
+  const flush = (arrow) => {
+    // replace \nX placeholder sequences with [name] for display
+    const disp = curLines.map(l =>
+      l.replace(/\\n./g, '[…]').replace(/\{[^}]+\}/g, '').trimEnd()
+    );
+    if (disp.some(l => l.trim())) pages.push({ lines: disp, arrow });
+    curLines = [''];
+  };
+
+  parts.forEach(part => {
+    if (part === '\\p') {
+      // line break: second line in same box, NO arrow
+      if (curLines.length < 2) curLines.push('');
+    } else if (part === '{HIGHLIGHT}') {
+      flush(true);   // ▼ arrow
+    } else if (part === '{SHADOW}') {
+      flush(false);  // silent clear, no arrow
+    } else {
+      curLines[curLines.length - 1] += part;
+    }
+  });
+  flush(false);
+  return pages.length ? pages : [{ lines: ['(leer)'], arrow: false }];
+
+}
+
+function renderPreviewBox(unused, offset, byteLength, text) {
+  const contentEl = document.getElementById('prev-content');
+  const arrowEl   = document.getElementById('prev-arrow');
+  const infoEl    = document.getElementById('prev-page-info');
+  const checksEl  = document.getElementById('prev-checks');
+  const titleEl   = document.getElementById('prev-title');
+
+  const page = prevPages[prevPageIdx];
+  const langLabel = (typeof _currentPreviewIsEn !== 'undefined' && _currentPreviewIsEn) ? ' 🇬🇧 EN' : ' 🇩🇪 DE';
+  if (offset) titleEl.textContent = `Vorschau${langLabel} — ${offset}`;
+  infoEl.textContent = `Seite ${prevPageIdx + 1} / ${prevPages.length}`;
+  // ▼ arrow only from {HIGHLIGHT}
+  arrowEl.className = 'gba-arrow' + (page.arrow ? ' show' : '');
+
+  const lines = page.lines;
+  let html = lines.map(line => {
+    const len = line.length;
+    let display = line.replace(/[äöüÄÖÜß]/g, m => `<span class="hl-umlaut">${m}</span>`);
+    return len > MAX_LINE ? `<span class="hl-over">${display}</span>` : display;
+  }).join('\n');
+  contentEl.innerHTML = html || '<span style="color:#999">(leer)</span>';
+
+  const segs = checkLineLength(text || '');
+  const overSegs = segs.filter(s => s.over);
+  const umlauts = (text || '').match(/[\u00e4\u00f6\u00fc\u00c4\u00d6\u00dc\u00df]/g) || [];
+  const used = text ? countGbaBytes(text) : 0;
+
+  let checksHtml = '';
+  checksHtml += used <= (byteLength || 9999)
+    ? `<span class="chk-ok">\u2713 Bytes: ${used}/${byteLength || '?'}</span>`
+    : `<span class="chk-err">\u2717 Bytes: ${used}/${byteLength} \u2014 zu lang um +${used - (byteLength||0)}</span>`;
+  checksHtml += umlauts.length
+    ? `<span class="chk-err">\u2717 Umlaute: ${[...new Set(umlauts)].join(' ')}</span>`
+    : `<span class="chk-ok">\u2713 Keine Umlaute</span>`;
+  checksHtml += overSegs.length
+    ? overSegs.map(s => `<span class="chk-err">\u2717 Segment ${s.idx+1}: ${s.len}/${MAX_LINE} Zeichen</span>`).join('')
+    : `<span class="chk-ok">\u2713 Alle Segmente \u2264 ${MAX_LINE} Zeichen</span>`;
+  checksHtml += `<span class="chk-ok" style="color:var(--muted)">\u2139 ${prevPages.length} Seite(n) \u2014 \\p=Zeilenumbruch | {HIGHLIGHT}=Scroll\u25bc | {SHADOW}=Box leeren</span>`;
+  checksEl.innerHTML = checksHtml;
+
+  document.getElementById('prev-back').disabled = prevPageIdx === 0;
+  document.getElementById('prev-next').disabled = prevPageIdx === prevPages.length - 1;
+}
+
+function openPreview(offset, data) {
+  const text = (data.translation || '').trim();
+  prevPages  = buildPreviewPages(text || '(leer)');
+  prevPageIdx = 0;
+  renderPreviewBox(prevPages[0], offset, data.byte_length, text);
+  document.getElementById('preview-modal').classList.add('open');
+}
+
+document.getElementById('prev-close').addEventListener('click', () => {
+  document.getElementById('preview-modal').classList.remove('open');
+});
+document.getElementById('preview-modal').addEventListener('click', e => {
+  if (e.target === document.getElementById('preview-modal'))
+    document.getElementById('preview-modal').classList.remove('open');
+});
+
+// store last text for nav re-renders
+let _currentPreviewOffset = null;
+let _currentPreviewData   = null;
+let _currentPreviewIsEn   = false;
+function _prevText() { return (_currentPreviewData?.translation || '').trim(); }
+
+function openPreviewFull(offset, data) {
+  _currentPreviewOffset = offset;
+  _currentPreviewData   = data;
+  const text = (data.translation || '').trim();
+  prevPages   = buildPreviewPages(text || '(leer)');
+  prevPageIdx = 0;
+  renderPreviewBox(prevPages[0], offset, data.byte_length || 999, text);
+  document.getElementById('preview-modal').classList.add('open');
+}
+
+// Nav: always re-read from _currentPreviewData for fresh byte_length
+function navPreview(delta) {
+  const newIdx = prevPageIdx + delta;
+  if (newIdx < 0 || newIdx >= prevPages.length) return;
+  prevPageIdx = newIdx;
+  renderPreviewBox(null, _currentPreviewOffset, _currentPreviewData?.byte_length || 0, _prevText());
+}
+document.getElementById('prev-back').onclick = () => navPreview(-1);
+document.getElementById('prev-next').onclick = () => navPreview(+1);
+
+// ── Filter ─────────────────────────────────────────────────────────────────
+function getFiltered() {
+  const search = document.getElementById('search-input').value.toLowerCase();
+  const filter = document.getElementById('filter-select').value;
+  return Object.entries(allData).filter(([offset, d]) => {
+    if (filter === 'open'     && d.done) return false;
+    if (filter === 'done'     && !d.done) return false;
+    if (filter === 'umlaut'   && (d.done || !hasUmlauts(d.translation || ''))) return false;
+    if (filter === 'lineover' && !checkLineLength(d.translation || '').some(s => s.over)) return false;
+    if (filter === 'ai'       && (!(d.comment && d.comment.includes('[KI]')) || d.done)) return false;
+    if (filter === 'toolong') {
+      const used = d.translation ? countGbaBytes(d.translation) : 0;
+      if (used <= (d.byte_length || 999)) return false;
+    }
+    if (search) {
+      if (!d.en.toLowerCase().includes(search) &&
+          !(d.translation||'').toLowerCase().includes(search) &&
+          !offset.toLowerCase().includes(search)) return false;
+    }
+    return true;
+  });
+}
+
+// ── Render ─────────────────────────────────────────────────────────────────
+function renderAll() {
+  const list = document.getElementById('string-list');
+  const filtered = getFiltered();
+  document.getElementById('empty-state').style.display = Object.keys(allData).length === 0 ? 'block' : 'none';
+  list.innerHTML = '';
+  filtered.slice(0, 300).forEach(([offset, data]) => list.appendChild(buildEntry(offset, data)));
+  if (filtered.length > 300) {
+    const more = document.createElement('p');
+    more.style.cssText = 'text-align:center;padding:20px;color:var(--muted)';
+    more.textContent = `… und ${(filtered.length - 300).toLocaleString()} weitere. Verfeinere die Suche.`;
+    list.appendChild(more);
   }
+  const countEl = document.getElementById('search-count');
+  const search  = document.getElementById('search-input').value;
+  const filter  = document.getElementById('filter-select').value;
+  if (search || filter !== 'all') {
+    countEl.textContent = `${filtered.length.toLocaleString()} Treffer`;
+    countEl.style.display = 'inline';
+  } else { countEl.style.display = 'none'; }
+  updateStats();
 }
 
 function buildEntry(offset, data) {
@@ -504,48 +499,63 @@ function buildEntry(offset, data) {
     <div class="entry-header">
       <span class="offset-badge">${offset}</span>
       <span style="color:#666">${data.byte_length || '?'}b</span>
-      <span class="byte-counter" id="bc-${offset.replace(/[^a-zA-Z0-9]/g,'_')}">? b</span>
+      <span class="byte-counter">?b</span>
       <span class="ai-badge">🤖 KI</span>
       <span class="done-badge">✓ Fertig</span>
     </div>
     <div class="entry-body">
       <div class="field">
-        <label>🇬🇧 Englisch (Original)</label>
+        <label>
+          🇬🇧 Englisch (Original)
+        </label>
+        <label>
+          <button class="label-btn copy-btn" title="In Zwischenablage kopieren">📋 Kopieren</button>
+          <button class="label-btn en-prev-btn" title="EN Vorschau">👁 Vorschau</button>
+        </label>
         <div class="en-text">${escHtml(data.en)}</div>
       </div>
       <div class="field">
-        <label>🇩🇪 Übersetzung</label>
+        <label>
+          🇩🇪 Übersetzung
+        </label>
+        <label>
+          <button class="label-btn prev-open-btn" title="Vorschau öffnen">👁 Vorschau</button>
+        </label>
         <textarea class="trans-input" placeholder="Übersetzung eingeben…">${escHtml(data.translation || '')}</textarea>
       </div>
     </div>
-    <div class="line-warnings" style="padding:4px 12px;background:rgba(0,0,0,.15)"></div>
+    <div class="umlaut-warn"></div>
+    <div class="line-warnings"></div>
     <div class="entry-footer">
       <input class="comment-input" type="text" placeholder="Notiz / Kommentar…" value="${escHtml(data.comment || '')}">
-      <button class="mark-done-btn" title="Als fertig markieren">✓ Fertig</button>
+      <button class="mark-done-btn">✓ Fertig</button>
     </div>
   `;
 
-  const enText = div.querySelector('.en-text');
-  enText.title = 'Klicken zum Kopieren';
-  enText.addEventListener('click', () => {
-    navigator.clipboard.writeText(data.en).then(() => {
-      enText.classList.add('copied');
-      const orig = enText.textContent;
-      enText.textContent = '✓ Kopiert!';
-      setTimeout(() => {
-        enText.textContent = orig;
-        enText.classList.remove('copied');
-      }, 800);
-    });
-  });
-
-  const textarea = div.querySelector('.trans-input');
+  const copyBtn    = div.querySelector('.copy-btn');
+  const prevBtn    = div.querySelector('.prev-open-btn');
+  const textarea   = div.querySelector('.trans-input');
   const commentInput = div.querySelector('.comment-input');
-  const doneBtn = div.querySelector('.mark-done-btn');
+  const doneBtn    = div.querySelector('.mark-done-btn');
 
-  // Initial byte count + line check render
-  updateByteCounter(div, offset, data.translation || '', data.byte_length);
+  copyBtn.addEventListener('click', e => { e.stopPropagation(); copyToClipboard(data.en, copyBtn); });
+  div.querySelector('.en-prev-btn').addEventListener('click', e => {
+    e.stopPropagation();
+    _currentPreviewIsEn = true;
+    const enData = { ...allData[offset], translation: data.en, byte_length: 99999 };
+    _currentPreviewOffset = offset;
+    _currentPreviewData = enData;
+    const text = data.en.trim();
+    prevPages = buildPreviewPages(text || '(leer)');
+    prevPageIdx = 0;
+    renderPreviewBox(null, offset, 99999, text);
+    document.getElementById('preview-modal').classList.add('open');
+  });
+  prevBtn.addEventListener('click', e => { e.stopPropagation(); openPreviewFull(offset, allData[offset]); });
+
+  updateByteCounter(div, data.translation || '', data.byte_length);
   updateLineWarnings(div, data.translation || '');
+  updateUmlautWarning(div, data.translation || '');
 
   textarea.addEventListener('input', () => {
     allData[offset].translation = textarea.value;
@@ -557,14 +567,20 @@ function buildEntry(offset, data) {
         if ((allData[offset].comment || '').includes('[KI]')) div.classList.add('ai-translated');
       }
     }
-    updateByteCounter(div, offset, textarea.value, data.byte_length);
+    updateByteCounter(div, textarea.value, data.byte_length);
     updateLineWarnings(div, textarea.value);
+    updateUmlautWarning(div, textarea.value);
+    // live-update preview if open
+    if (_currentPreviewOffset === offset) {
+      const text = textarea.value.trim();
+      prevPages = buildPreviewPages(text || '(leer)');
+      if (prevPageIdx >= prevPages.length) prevPageIdx = prevPages.length - 1;
+      renderPreviewBox(null, offset, data.byte_length || 999, text);
+    }
     updateStats();
   });
 
-  commentInput.addEventListener('input', () => {
-    allData[offset].comment = commentInput.value;
-  });
+  commentInput.addEventListener('input', () => { allData[offset].comment = commentInput.value; });
 
   doneBtn.addEventListener('click', () => {
     const wasDone = allData[offset].done;
@@ -595,52 +611,66 @@ function buildEntry(offset, data) {
   return div;
 }
 
-function updateByteCounter(div, offset, text, maxBytes) {
-  const id = 'bc-' + offset.replace(/[^a-zA-Z0-9]/g, '_');
+function updateByteCounter(div, text, maxBytes) {
   const el = div.querySelector('.byte-counter');
   if (!el || !maxBytes) return;
   const used = text.trim() ? countGbaBytes(text) : 0;
   el.textContent = used ? `${used}/${maxBytes}b` : `${maxBytes}b`;
   el.className = 'byte-counter';
-  textarea = div.querySelector('.trans-input');
+  const ta = div.querySelector('.trans-input');
   if (!text.trim() || used <= maxBytes) {
     el.classList.add(used > maxBytes * 0.9 ? 'warn' : 'ok');
-    textarea && textarea.classList.remove('over');
+    ta && ta.classList.remove('over');
   } else {
     el.classList.add('over');
-    textarea && textarea.classList.add('over');
+    ta && ta.classList.add('over');
   }
 }
 
+// ── Clipboard (works on file://) ───────────────────────────────────────────
+function copyToClipboard(text, btn) {
+  const flash = () => {
+    btn.textContent = '✓ Kopiert!';
+    btn.classList.add('copied');
+    setTimeout(() => { btn.textContent = '📋 Kopieren'; btn.classList.remove('copied'); }, 1200);
+  };
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(text).then(flash).catch(() => fallback(text, flash));
+  } else { fallback(text, flash); }
+}
+function fallback(text, onSuccess) {
+  const ta = document.createElement('textarea');
+  ta.value = text;
+  ta.style.cssText = 'position:fixed;top:-9999px;left:-9999px;opacity:0';
+  document.body.appendChild(ta);
+  ta.focus(); ta.select();
+  try { document.execCommand('copy'); onSuccess(); } catch(e) { alert('Kopieren fehlgeschlagen.'); }
+  document.body.removeChild(ta);
+}
+
 function escHtml(s) {
-  return String(s)
-    .replace(/&/g, '&amp;')
-    .replace(/</g, '&lt;')
-    .replace(/>/g, '&gt;')
-    .replace(/"/g, '&quot;');
+  return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
 }
 
 // ── Stats ──────────────────────────────────────────────────────────────────
 function updateStats() {
-  const total = Object.keys(allData).length;
-  const done = Object.values(allData).filter(d => d.done).length;
-  const filled = Object.values(allData).filter(d => !d.done && (d.translation || '').trim().length > 0).length;
-  const open = total - done - filled;
-  const pct = total ? Math.round(done / total * 100) : 0;
-
-  document.getElementById('stat-total').textContent = total.toLocaleString();
-  document.getElementById('stat-done').textContent = done.toLocaleString();
+  const total  = Object.keys(allData).length;
+  const done   = Object.values(allData).filter(d => d.done).length;
+  const filled = Object.values(allData).filter(d => !d.done && (d.translation||'').trim().length > 0).length;
+  const open   = total - done - filled;
+  const pct    = total ? Math.round(done / total * 100) : 0;
+  document.getElementById('stat-total').textContent  = total.toLocaleString();
+  document.getElementById('stat-done').textContent   = done.toLocaleString();
   document.getElementById('stat-filled').textContent = filled.toLocaleString();
-  document.getElementById('stat-open').textContent = open.toLocaleString();
-  document.getElementById('stat-pct').textContent = pct;
+  document.getElementById('stat-open').textContent   = open.toLocaleString();
+  document.getElementById('stat-pct').textContent    = pct;
   document.getElementById('progress-fill').style.width = pct + '%';
 }
 
 // ── Save ───────────────────────────────────────────────────────────────────
 function saveJSON() {
   if (!Object.keys(allData).length) { alert('Keine Daten geladen.'); return; }
-  const json = JSON.stringify(allData, null, 2);
-  const blob = new Blob([json], { type: 'application/json; charset=utf-8' });
+  const blob = new Blob([JSON.stringify(allData, null, 2)], { type: 'application/json; charset=utf-8' });
   const a = document.createElement('a');
   a.href = URL.createObjectURL(blob);
   a.download = currentFile || 'de.json';
@@ -650,10 +680,12 @@ function saveJSON() {
 
 function copyStats() {
   const total = Object.keys(allData).length;
-  const done = Object.values(allData).filter(d => d.done).length;
-  const pct = total ? Math.round(done / total * 100) : 0;
-  const text = `Unbound DE Übersetzung: ${done}/${total} (${pct}%) fertig`;
-  navigator.clipboard.writeText(text).then(() => toast('📋 Kopiert!'));
+  const done  = Object.values(allData).filter(d => d.done).length;
+  const pct   = total ? Math.round(done / total * 100) : 0;
+  const text  = `Unbound DE Übersetzung: ${done}/${total} (${pct}%) fertig`;
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(text).then(() => toast('📋 Kopiert!'));
+  } else { fallback(text, () => toast('📋 Kopiert!')); }
 }
 
 // ── Toast ──────────────────────────────────────────────────────────────────
@@ -673,7 +705,11 @@ let filterTimer;
   });
 });
 
-// Initial empty state
+// Escape key closes modal
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') document.getElementById('preview-modal').classList.remove('open');
+});
+
 document.getElementById('empty-state').style.display = 'block';
 </script>
 </body>

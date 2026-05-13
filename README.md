@@ -3,7 +3,7 @@
 Multi-language translation pipeline für Pokémon Unbound (GBA ROM-Hack).
 
 ![Python](https://img.shields.io/badge/Python-3.9%2B-blue)
-![Fortschritt DE](https://img.shields.io/badge/Deutsch-0%25-red)
+![Fortschritt DE](https://img.shields.io/badge/Deutsch-1%25-red)
 ![Lizenz](https://img.shields.io/badge/Lizenz-MIT-green)
 
 ## Quick Start
